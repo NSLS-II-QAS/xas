@@ -281,20 +281,26 @@ def save_interpolated_df_as_file(path_to_file, df, comments):
     call(['chmod', '774', path_to_file])
 
 
-def save_binned_df_as_file(path_to_file, df, comments):
+def save_binned_df_as_file(path_to_file, df, comments, reorder=False):
     (path, extension) = os.path.splitext(path_to_file)
     path_to_file = path + '.dat'
     path_to_file = validate_file_exists(path_to_file,file_type = 'bin')
-    cols = df.columns.tolist()[::-1]
+    cols = df.columns.tolist()
+    if reorder:
+        cols = cols[-1:] + cols[:-1]
+        print(f'>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> columns {cols}')
+    else:
+        cols = cols[::-1]
+    df = df[cols]
     #cols = cols[-1:] + cols[:-1]
     fmt = '%12.6f ' + (' '.join(['%12.6e' for i in range(len(cols) - 1)]))
     header = '  '.join(cols)
-    df = df[cols]
     np.savetxt(path_to_file,
                df.values,
                fmt=fmt,
                delimiter=" ",
                header=header,
+
                comments=comments)
 
     #print("changing permissions to 774")

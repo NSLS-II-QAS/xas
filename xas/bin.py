@@ -79,3 +79,5 @@ def bin(interpolated_dataset, e0, edge_start=-30, edge_end=40, preedge_spacing=5
     binned_df = binned_df.drop('timestamp', 1)
 
     return binned_df
+
+
