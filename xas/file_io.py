@@ -55,21 +55,21 @@ def load_dataset_from_files(db,uid):
         # WIP Another terrible hack
         try:
             stream_name = stream['data_keys'][stream['name']]['devname']
-            print(f'STREAM {stream_name}')
+            #print(f'STREAM {stream_name}')
             stream_file = stream['data_keys'][stream['name']]['filename']
         except:
-            print('STREAM IS NOT FOUND')
+            #print('STREAM IS NOT FOUND')
             stream_name = None
             stream_file = None
 
         stream_source = stream['data_keys'][stream['name']]['source']
 
-        print(stream_file)
+        #print(stream_file)
 
         if stream_source == 'pizzabox-di-file':
             data = load_trig_trace(stream_file)
         if stream_source == 'pizzabox-adc-file':
-            print(f'STREAM DEVICE {stream_device}')
+            #print(f'STREAM DEVICE {stream_device}')
 
             #Monkey patch to deal with dual ADC
             if ('adc4' in stream_device) or  ('adc6' in stream_device) or  ('adc8' in stream_device):
@@ -78,7 +78,7 @@ def load_dataset_from_files(db,uid):
                 data = load_adc_trace(stream_file, master=True)
             stream_offset = f'{stream_device} offset'
             if stream_offset in db[uid]['start']:
-                print("subtracting offset")
+                #print("subtracting offset")
                 data.iloc[:, 1] = data.iloc[:, 1] - record['start'][stream_offset]
             #stream_gain =  f'{stream_device} gain'
             # if stream_gain in db[uid]['start']:
@@ -88,12 +88,12 @@ def load_dataset_from_files(db,uid):
 
         if stream_source == 'pizzabox-enc-file':
             data = load_enc_trace(stream_file)
-            print(stream_name)
+            #print(stream_name)
             if stream_name =='mono1_enc':
                 data.iloc[:,1] = xray.encoder2energy(data['encoder'], 26222.222222222223,
                                                        -float(record['start']['angle_offset']))
                 stream_name = 'energy'
-                print(f'STREAM NAME {stream_name}')
+                #print(f'STREAM NAME {stream_name}')
         if stream_name is not None:
             arrays[stream_name] = data
 
@@ -286,11 +286,12 @@ def save_binned_df_as_file(path_to_file, df, comments, reorder=False):
     path_to_file = path + '.dat'
     path_to_file = validate_file_exists(path_to_file,file_type = 'bin')
     cols = df.columns.tolist()
+    print(f'Columns before >>>>>>>>>>>>>>>>>>>>>>>> {cols}')
     if reorder:
         cols = cols[-1:] + cols[:-1]
-        print(f'>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> columns {cols}')
     else:
         cols = cols[::-1]
+    print(f'Columns after >>>>>>>>>>>>>>>>>>>>>>>> {cols}')
     df = df[cols]
     #cols = cols[-1:] + cols[:-1]
     fmt = '%12.6f ' + (' '.join(['%12.6e' for i in range(len(cols) - 1)]))
