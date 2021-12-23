@@ -27,26 +27,26 @@ def process_interpolate_bin(doc, db, draw_func_interp = None, draw_func_binnned 
 
             path_to_file = validate_file_exists(path_to_file, file_type='interp')
             print(f'>>>Path to file {path_to_file}')
-            try:
-                if experiment ==  'fly_energy_scan':
-                    raw_df = load_dataset_from_files(db, uid)
-                    key_base = 'i0'
-                elif  experiment ==  'fly_energy_scan_apb':
-                    apb_df, energy_df, energy_offset = load_apb_dataset_from_db(db, uid)
-                    raw_df= translate_apb_dataset(apb_df, energy_df, energy_offset)
-                    key_base = 'i0'
-                elif experiment == 'fly_energy_scan_xs3':
-                    apb_df, energy_df, energy_offset = load_apb_dataset_from_db(db, uid)
-                    raw_df = translate_apb_dataset(apb_df, energy_df, energy_offset)
+            # try:
+            if experiment ==  'fly_energy_scan':
+                raw_df = load_dataset_from_files(db, uid)
+                key_base = 'i0'
+            elif  experiment ==  'fly_energy_scan_apb':
+                apb_df, energy_df, energy_offset = load_apb_dataset_from_db(db, uid)
+                raw_df= translate_apb_dataset(apb_df, energy_df, energy_offset)
+                key_base = 'i0'
+            elif experiment == 'fly_energy_scan_xs3':
+                apb_df, energy_df, energy_offset = load_apb_dataset_from_db(db, uid)
+                raw_df = translate_apb_dataset(apb_df, energy_df, energy_offset)
 
-                    apb_trig_timestamps = load_apb_trig_dataset_from_db(db, uid)
-                    xs3_dict = load_xs3_dataset_from_db(db, uid, apb_trig_timestamps)
+                apb_trig_timestamps = load_apb_trig_dataset_from_db(db, uid)
+                xs3_dict = load_xs3_dataset_from_db(db, uid, apb_trig_timestamps)
 
-                    raw_df = {**raw_df, **xs3_dict}
-                    key_base = 'CHAN1ROI1'
-                logger.info(f'Loading file successful for UID {uid}/{path_to_file}')
-            except:
-                logger.info(f'Loading file failed for UID {uid}/{path_to_file}')
+                raw_df = {**raw_df, **xs3_dict}
+                key_base = 'CHAN1ROI1'
+            logger.info(f'Loading file successful for UID {uid}/{path_to_file}')
+            # except:
+            #     logger.info(f'Loading file failed for UID {uid}/{path_to_file}')
             try:
                 interpolated_df = interpolate(raw_df, key_base = key_base)
                 logger.info(f'Interpolation successful for {path_to_file}')
