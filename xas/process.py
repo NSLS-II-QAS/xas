@@ -63,16 +63,17 @@ def process_interpolate_bin(doc, db, draw_func_interp = None, draw_func_binnned 
                         save_binned_df_as_file(path_to_file, binned_df, comments, reorder=True)
                     else:
                         save_binned_df_as_file(path_to_file, binned_df, comments, reorder=False)
-
+                    if draw_func_interp is not None:
+                        draw_func_interp(interpolated_df)
 
                 else:
                     print('Energy E0 is not defined')
-            except:
+            except Exception as e:
                 logger.info(f'Binning failed for {path_to_file}')
-
-            if draw_func_interp is not None:
-                draw_func_interp(interpolated_df)
-                print('Inside xas process try draw (e0 > 0) end time: ', datetime.now())
+                print(e)
+                pass
+           
+                #print('Inside xas process try draw (e0 > 0) end time: ', datetime.now())
                 
         
 

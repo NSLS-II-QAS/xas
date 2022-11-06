@@ -19,7 +19,7 @@ def load_data_with_xs3(db,uid):
         ch_roi1_sum = 0
         ch_roi2_sum = 0
         ch_roi3_sum = 0
-        ch_roi4_sum = 0
+        ch_roi4_sum = 0        
         for ch in range(len(xs_data[1].columns)):
 
 
@@ -33,10 +33,10 @@ def load_data_with_xs3(db,uid):
             ch_roi4_lo = roi_lims[ch][6]
             ch_roi4_hi = roi_lims[ch][7]
             ch_roi1_sum += sum(channel[ch_roi1_lo:ch_roi1_hi])
-            ch_roi1_sum += sum(channel[ch_roi2_lo:ch_roi2_hi])
-            ch_roi1_sum += sum(channel[ch_roi3_lo:ch_roi3_hi])
-            ch_roi1_sum += sum(channel[ch_roi4_lo:ch_roi4_hi])
-
+            ch_roi2_sum += sum(channel[ch_roi2_lo:ch_roi2_hi])
+            ch_roi3_sum += sum(channel[ch_roi3_lo:ch_roi3_hi])
+            ch_roi4_sum += sum(channel[ch_roi4_lo:ch_roi4_hi])
+        
         roi1.append(ch_roi1_sum)
         roi2.append(ch_roi2_sum)
         roi3.append(ch_roi3_sum)

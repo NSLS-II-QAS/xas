@@ -75,7 +75,7 @@ def load_xs3_dataset_from_db(db, uid, apb_trig_timestamps):
     t = hdr.table(stream_name='xs_stream', fill=True)['xs_stream']
     n_spectra = t.size
     xs_timestamps = apb_trig_timestamps[:n_spectra]
-    chan_roi_names = [f'CHAN{c}ROI{r}' for c, r in product([1, 2, 3, 4], [1, 2, 3, 4])]
+    chan_roi_names = [f'CHAN{c}ROI{r}' for c, r in product([1, 2, 3, 4, 6], [1, 2, 3, 4])]
     spectra = {}
 
     for j, chan_roi in enumerate(chan_roi_names):
