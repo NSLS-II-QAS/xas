@@ -7,11 +7,14 @@ from copy import deepcopy
 
 def load_apb_dataset_from_db(db, uid):
     hdr = db[uid]
-    apb_dataset = deepcopy(list(hdr.data(stream_name='apb_stream', field='apb_stream'))[0])
+    if hdr.start.hutch == 'b':
+        apb_dataset = deepcopy(list(hdr.data(stream_name='apb_stream', field='apb_stream'))[0])
+    if hdr.start.hutch == 'c':
+        apb_dataset = deepcopy(list(hdr.data(stream_name='apb_stream_c', field='apb_stream_c'))[0])
+
     # apb_dataset = list(hdr.data(stream_name='apb_stream', field='apb_stream'))[0]
     energy_dataset =  list(hdr.data(stream_name='pb1_enc1',field='pb1_enc1'))[0]
     angle_offset = -float(hdr['start']['angle_offset'])
-
     # ch_offset_keys = [key for key in hdr.start.keys() if key.startswith('ch') and key.endswith('_offset')]
     # ch_offsets = np.array([hdr.start[key] for key in ch_offset_keys])
 
