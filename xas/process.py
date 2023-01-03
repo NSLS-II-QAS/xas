@@ -72,8 +72,8 @@ def process_interpolate_bin(doc, db, draw_func_interp = None, draw_func_binnned 
                 logger.info(f'Binning failed for {path_to_file}')
                 print(e)
                 pass
-           
-                #print('Inside xas process try draw (e0 > 0) end time: ', datetime.now())
+        elif experiment.startswith('diffraction'):
+            pass
                 
         
 
