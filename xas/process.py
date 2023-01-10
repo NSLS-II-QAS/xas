@@ -74,8 +74,6 @@ def process_interpolate_bin(doc, db, draw_func_interp = None, draw_func_binnned 
                 pass
         elif experiment.startswith('diffraction'):
             pass
-                
-        
 
 def process_interpolate_only(doc, db):
     if 'experiment' in db[doc['run_start']].start.keys():
