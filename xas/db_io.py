@@ -3,9 +3,11 @@ import numpy as np
 from . import xray
 from itertools import product
 from copy import deepcopy
+import time as ttime
 
 
 def load_apb_dataset_from_db(db, uid):
+    print(f'READING DATABROKER - {ttime.time()}')
     hdr = db[uid]
     if hdr.start.hutch == 'b':
         apb_dataset = deepcopy(list(hdr.data(stream_name='apb_stream', field='apb_stream'))[0])
