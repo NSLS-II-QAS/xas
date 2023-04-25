@@ -5,7 +5,7 @@ import pandas as pd
 
 
 
-def bin(interpolated_dataset, e0, edge_start=-30, edge_end=40, preedge_spacing=5,
+def rebin(interpolated_dataset, e0, edge_start=-30, edge_end=40, preedge_spacing=5,
                         xanes_spacing=0.2, exafs_k_spacing = 0.04 ):
 
     # Constants for converting from hwhm -> gaussian parameters
