@@ -1,4 +1,4 @@
-from .bin import bin
+from .bin import rebin
 from .file_io import (load_dataset_from_files, create_file_header, validate_file_exists, validate_path_exists,
                       save_interpolated_df_as_file, save_binned_df_as_file, find_e0)
 
@@ -10,6 +10,21 @@ from .xas_logger import get_logger
 from .xs3 import load_data_with_xs3
 
 from datetime import datetime
+
+
+def average_roi_channels(dataframe=None):
+    if dataframe is not None:
+        col1 = dataframe.columns.tolist()[:-1]
+        for j in range(1,5):
+            dat = 0
+            for i in range(1,5):
+                dat += getattr(dataframe, 'CHAN' + str(j) + 'ROI' + str(i))
+            dataframe['ROI' + str(j) + 'AVG'] = dat/4
+            col1.append('ROI' + str(j) + 'AVG')
+        col1.append('energy')
+        dataframe = dataframe[col1]
+        print('Done with averaging')
+    return dataframe
 
 
 def process_interpolate_bin(doc, db, draw_func_interp = None, draw_func_binnned = None):
@@ -57,9 +72,13 @@ def process_interpolate_bin(doc, db, draw_func_interp = None, draw_func_binnned 
             try:
                 if e0 > 0:
                     print('Inside xas process try draw (e0 > 0) start time: ', datetime.now())
-                    binned_df = bin(interpolated_df, e0)
+                    binned_df = rebin(interpolated_df, e0)
+
                     logger.info(f'Binning successful for {path_to_file}')
-                    if  experiment ==  'fly_energy_scan_apb' or experiment ==  'fly_energy_scan_xs3':
+                    if  experiment ==  'fly_energy_scan_apb':
+                        save_binned_df_as_file(path_to_file, binned_df, comments, reorder=True)
+                    elif experiment == 'fly_energy_scan_xs3':
+                        binned_df = average_roi_channels(binned_df)
                         save_binned_df_as_file(path_to_file, binned_df, comments, reorder=True)
                     else:
                         save_binned_df_as_file(path_to_file, binned_df, comments, reorder=False)
