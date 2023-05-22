@@ -18,7 +18,7 @@ def average_roi_channels(dataframe=None):
         for j in range(1,5):
             dat = 0
             for i in range(1,5):
-                dat += getattr(dataframe, 'CHAN' + str(j) + 'ROI' + str(i))
+                dat += getattr(dataframe, 'CHAN' + str(i) + 'ROI' + str(j))
             dataframe['ROI' + str(j) + 'AVG'] = dat/4
             col1.append('ROI' + str(j) + 'AVG')
         col1.append('energy')

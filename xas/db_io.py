@@ -9,9 +9,9 @@ import time as ttime
 def load_apb_dataset_from_db(db, uid):
     print(f'READING DATABROKER - {ttime.time()}')
     hdr = db[uid]
-    if hdr.start.hutch == 'b':
+    if hdr.start['hutch'] == 'b':
         apb_dataset = deepcopy(list(hdr.data(stream_name='apb_stream', field='apb_stream'))[0])
-    if hdr.start.hutch == 'c':
+    if hdr.start['hutch'] == 'c':
         apb_dataset = deepcopy(list(hdr.data(stream_name='apb_stream_c', field='apb_stream_c'))[0])
 
     # apb_dataset = list(hdr.data(stream_name='apb_stream', field='apb_stream'))[0]

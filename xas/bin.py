@@ -1,5 +1,7 @@
 import numpy as np
-from . import xray
+from xas import xray
+
+# import .xray as xray
 import numexpr as ne
 import pandas as pd
 
@@ -42,6 +44,7 @@ def rebin(interpolated_dataset, e0, edge_start=-30, edge_end=40, preedge_spacing
                                             fwhm.reshape(-1, 1),
                                             sample_points.reshape(-1, 1))
         mat *= delta_en.reshape(1, -1)
+        # mat /= np.sum(mat, axis=1)[:, None]
         return mat
 
     def xas_energy_grid(energy_range, e0, edge_start, edge_end, preedge_spacing, xanes_spacing, exafs_k_spacing):
@@ -76,7 +79,7 @@ def rebin(interpolated_dataset, e0, edge_start=-30, edge_end=40, preedge_spacing
     ret = {k: convo_mat @ v.values for k, v in interpolated_dataset.items() if k != 'energy'}
     ret['energy'] = binned_energy_grid
     binned_df = pd.DataFrame(ret)
-    binned_df = binned_df.drop('timestamp', 1)
+    binned_df = binned_df.drop(columns='timestamp')
 
     return binned_df
 
