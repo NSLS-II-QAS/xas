@@ -15,9 +15,9 @@ from datetime import datetime
 def average_roi_channels(dataframe=None):
     if dataframe is not None:
         col1 = dataframe.columns.tolist()[:-1]
-        for j in range(1,5):
+        for j in range(1, 5):
             dat = 0
-            for i in range(1,5):
+            for i in range(1, 5):
                 dat += getattr(dataframe, 'CHAN' + str(i) + 'ROI' + str(j))
             dataframe['ROI' + str(j) + 'AVG'] = dat/4
             col1.append('ROI' + str(j) + 'AVG')
