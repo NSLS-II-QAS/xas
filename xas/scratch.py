@@ -2,9 +2,9 @@
 # from .file_io import (load_dataset_from_files, create_file_header, validate_file_exists, validate_path_exists,
 #                       save_interpolated_df_as_file, save_binned_df_as_file, find_e0)
 #
-# from xas.db_io import load_apb_dataset_from_db, translate_apb_dataset, load_apb_trig_dataset_from_db, \
-#     load_xs3_dataset_from_db
-# from .interpolate import interpolate
+from xas.db_io import load_apb_dataset_from_db, translate_apb_dataset, load_apb_trig_dataset_from_db, \
+    load_xs3_dataset_from_db
+from .interpolate import interpolate
 
 # (load_dataset_from_files, create_file_header, validate_file_exists, validate_path_exists,
 #                   save_interpolated_df_as_file, save_binned_df_as_file, find_e0)
@@ -63,10 +63,10 @@ xs3_dict = load_xs3_dataset_from_db(db, db[-1].start['uid'], apb_trig_timestamps
 raw_df = {**raw_df, **xs3_dict}
 key_base = 'CHAN1ROI1'
 
-key_base = 'i0'
+# key_base = 'i0'
 
 interpolated_df = interpolate(raw_df, key_base = key_base)
-binned_df = bin(interpolated_df, 8333)
+binned_df = bin(interpolated_df, 7112)
 
 path = '/nsls2/data/qas-new/legacy/processed/2023/2/000000/'
 
@@ -431,9 +431,11 @@ plt.plot(raw_df['iff']['timestamp'], raw_df['iff']['adc']*90000)
 plt.figure()
 # plt.errorbar(raw_df['iff']['timestamp'],raw_df['iff']['adc'], capsize=5)
 plt.plot(raw_df['i0']['timestamp'], raw_df['i0']['adc'], label='i0')
+plt.plot(raw_df_fly['i0']['timestamp'], raw_df_fly['i0']['adc'], label='i0')
 plt.plot(raw_df['it']['timestamp'], raw_df['it']['adc'], label='it')
 plt.plot(raw_df['ir']['timestamp'], raw_df['ir']['adc'], label='ir')
 plt.plot(raw_df['iff']['timestamp'], raw_df['iff']['adc'], label='iff')
 plt.legend()
 
-
+plt.figure()
+plt.plot(raw_df['CHAN1ROI1']['timestamp'], raw_df['CHAN1ROI1']['CHAN1ROI1'])
