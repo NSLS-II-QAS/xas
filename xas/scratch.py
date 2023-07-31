@@ -54,6 +54,11 @@ def average_roi_channels(dataframe=None):
         print('Done with averaging')
     return dataframe
 
+
+from xas.process import load_apb_dataset_from_db, translate_apb_dataset, load_apb_trig_dataset_from_db, \
+    load_xs3_dataset_from_db, interpolate, rebin
+
+
 apb_df, energy_df, energy_offset = load_apb_dataset_from_db(db, db[-1].start['uid'])
 raw_df = translate_apb_dataset(apb_df, energy_df, energy_offset)
 
@@ -439,3 +444,6 @@ plt.legend()
 
 plt.figure()
 plt.plot(raw_df['CHAN1ROI1']['timestamp'], raw_df['CHAN1ROI1']['CHAN1ROI1'])
+
+
+uid = '4ec32c98-0404-4859-93d7-cf405f380fef'

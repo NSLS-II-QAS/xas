@@ -203,6 +203,13 @@ def create_file_header(db,uid):
     else:
         e0 = ''
 
+    if 'linkam_temperature' in db[uid]['start']:
+        linkam_T = db[uid]['start']['linkam_temperature'][0]
+        linkam_RR = db[uid]['start']['linkam_temperature'][1]
+    else:
+        linkam_T = 0
+        linkam_RR = 0
+
     comments =   '# Facility: {}\n'\
                  '# Beamline: {}\n'\
                  '# Year: {}\n' \
@@ -228,6 +235,7 @@ def create_file_header(db,uid):
                  '# Incident Slits Positions B: TOP: {} mm Bottom: {} mm Inboard: {} mm Outboard: {} mm\n'\
                  '# Sample Stage Positions: Rotation: {} deg Horizontal: {:.2f} mm Vertical: {:.2f} mm Beam Direction: {:.2f} mm\n'\
                  '# PerkinElmer Vertical Position: {:.2f} mm\n'\
+                 '# Linkam Oven Temperature : {:.2f} C and Ramp Rate: {:.2f} C/min.\n'\
                  '# Front End Mirror Horizontal Positions: Up: {:.2f} mm Down: {:.2f} mm\n#\n# '.format(
                   facility,
                   beamline,
@@ -254,6 +262,7 @@ def create_file_header(db,uid):
                   hutchB_slits_top, hutchB_slits_bottom, hutchB_slits_inboard, hutchB_slits_outboard,
                   hutchB_samplestage_rot, hutchB_samplestage_x, hutchB_samplestage_y, hutchB_samplestage_z,
                   pe_vertical,
+                  linkam_T, linkam_RR,
                   frontend_cm_xu, frontend_cm_xd)
     return  comments
 
