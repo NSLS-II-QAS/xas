@@ -295,13 +295,13 @@ def save_binned_df_as_file(path_to_file, df, comments, reorder=False):
     path_to_file = path + '.dat'
     path_to_file = validate_file_exists(path_to_file,file_type = 'bin')
     cols = df.columns.tolist()
-    print(f'Columns before >>>>>>>>>>>>>>>>>>>>>>>> {cols}')
-    if reorder:
-        cols = cols[-1:] + cols[:-1]
-    else:
-        cols = cols[::-1]
-    print(f'Columns after >>>>>>>>>>>>>>>>>>>>>>>> {cols}')
-    df = df[cols]
+    # print(f'Columns before >>>>>>>>>>>>>>>>>>>>>>>> {cols}')
+    # if reorder:
+    #     cols = cols[-1:] + cols[:-1]
+    # else:
+    #     cols = cols[::-1]
+    # print(f'Columns after >>>>>>>>>>>>>>>>>>>>>>>> {cols}')
+    # df = df[cols]
     #cols = cols[-1:] + cols[:-1]
     fmt = '%12.6f ' + (' '.join(['%12.6e' for i in range(len(cols) - 1)]))
     header = '  '.join(cols)

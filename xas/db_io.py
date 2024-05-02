@@ -95,6 +95,31 @@ def load_xs3_dataset_from_db(db, uid, apb_trig_timestamps):
 
 
 
+def load_xs3_dataset_from_db_new(db, uid, apb_trig_timestamps):
+    hdr = db[uid]
+    t = hdr.table(stream_name='xs_stream', fill=True)['xs_stream']
+    n_spectra = t.size
+    xs_timestamps = apb_trig_timestamps[:n_spectra]
+    chan_roi_names = [f'CHAN{c}ROI{r}' for c, r in product([1, 2, 3, 4, 6], [1, 2, 3, 4])]
+    spectra = {}
+
+    for j, chan_roi in enumerate(chan_roi_names):
+        this_spectrum = np.zeros(n_spectra)
+
+        for i in range(n_spectra):
+            this_spectrum[i] = t[i+1][chan_roi]
+
+        spectra[chan_roi] = pd.DataFrame(np.vstack((xs_timestamps, this_spectrum)).T, columns=['timestamp', chan_roi])
+
+    _buffer = {}
+    for key in ['ch_1', 'ch_2', 'ch_3', 'ch_4']:
+        _buffer[key] = [i[key].astype(np.float64) for i in list(hdr.data(stream_name='xs_stream', field='xs_stream'))]
+        _buffer_df = pd.DataFrame(_buffer)
+        spectra[key] = pd.DataFrame(np.vstack((xs_timestamps.astype('float'), _buffer_df[key])).T, columns=['timestamp', key])
+
+    return spectra
+
+
 def load_pil100k_dataset_from_db(db, uid, apb_trig_timestamps, input_type='hdf5'):
     hdr = db[uid]
     t = hdr.table(stream_name='pil100k_stream', fill=True)['pil100k_stream']
