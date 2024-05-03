@@ -602,7 +602,7 @@ def extract_data(hdrs):
         apb_data = hdr.table(stream_name="apb_stream", fill=True)
 
         # APB:
-        apb_times = np.array(apb_data["apb_stream"][1]["timestamp"]
+        apb_times = np.array(apb_data["apb_stream"][1]["timestamp"])
         plt.plot([0, apb_times[-1]-apb_times[0]] , [i, i], label="APB times")
 
         # plt.axvline(apb_times[0], ymin=i-0.5, ymax=i+0.5)
@@ -634,7 +634,7 @@ def split_dataset(dataset, n_periods):
         #print(stop_time)
         for key in dataset.keys():
             if key != 'energy':
-                signal_start_index=df.iloc[(datasedt[key]['timestamp']-start time).abs().argsort()[:1]]
+                signal_start_index=df.iloc[(datasedt[key]['timestamp']-start_time).abs().argsort()[:1]]
 
 
 
@@ -1408,18 +1408,15 @@ def test_flying_epics_motor():
 def optimize_gains_plan(n_tries=3, trajectory_filename=None, mono_angle_offset=None):
     # sys.stdout = kwargs.pop('stdout', sys.stdout)
 
-    # if 'detector_names' not in kwargs:
-    # detectors = [pba1.adc7, pba2.adc6, pba1.adc1, pba1.adc6]
     detectors = [apb_ave]
     channels =  [apb_ave.ch1,  apb_ave.ch2,  apb_ave.ch3,  apb_ave.ch4]
-    # offsets = [apb.ch1_offset, apb.ch2_offset, apb.ch3_offset, apb.ch4_offset]
 
     if trajectory_filename is not None:
         yield from prepare_trajectory_plan(trajectory_filename, offset=mono_angle_offset)
         # trajectory_stack.set_trajectory(trajectory_filename, offset=mono_angle_offset)
 
-    threshold_hi = 3.250
-    threshold_lo = 0.250
+    threshold_hi = 7000 #mV
+    threshold_lo = 50 #mV
 
     e_min, e_max = trajectory_manager.read_trajectory_limits()
     scan_positions = np.arange(e_max + 50, e_min - 50, -200).tolist()
@@ -1462,3 +1459,78 @@ def optimize_gains_plan(n_tries=3, trajectory_filename=None, mono_angle_offset=N
 
     yield from shutter.close_plan()
     yield from get_offsets_plan()
+
+
+
+class Mono2(Device):
+    _default_configuration_attrs = ('bragg', 'energy', 'pico', 'diag')
+    _default_read_attrs = ('bragg', 'energy', 'pico', 'diag')
+    "Monochromator"
+    ip = '10.68.50.104'
+    traj_filepath = '/home/xf07bm/trajectory/'
+    bragg = Cpt(EpicsMotor, 'Mono:1-Ax:Scan}Mtr')
+    energy = Cpt(EpicsMotor, 'Mono:1-Ax:E}Mtr')
+    pico = Cpt(EpicsMotor, 'Mono:1-Ax:Pico}Mtr')
+    diag = Cpt(EpicsMotor, 'Mono:1-Ax:Diag}Mtr')
+
+    main_motor_res = Cpt(EpicsSignal, 'Mono:1-Ax:Scan}Mtr.MRES')
+
+    # The following are related to trajectory motion
+    lut_number = Cpt(EpicsSignal, 'MC:03}LUT-Set')
+    lut_number_rbv = Cpt(EpicsSignal, 'MC:03}LUT-Read')
+    lut_start_transfer = Cpt(EpicsSignal, 'MC:03}TransferLUT')
+    lut_transfering = Cpt(EpicsSignal, 'MC:03}TransferLUT-Read')
+    trajectory_loading = Cpt(EpicsSignal, 'MC:03}TrajLoading')
+    traj_mode = Cpt(EpicsSignal, 'MC:03}TrajFlag1-Set')
+    traj_mode_rbv = Cpt(EpicsSignal, 'MC:03}TrajFlag1-Read')
+    enable_ty = Cpt(EpicsSignal, 'MC:03}TrajFlag2-Set')
+    enable_ty_rbv = Cpt(EpicsSignal, 'MC:03}TrajFlag2-Read')
+    cycle_limit = Cpt(EpicsSignal, 'MC:03}TrajRows-Set')
+    cycle_limit_rbv = Cpt(EpicsSignal, 'MC:03}TrajRows-Read')
+    enable_loop = Cpt(EpicsSignal, 'MC:03}TrajLoopFlag-Set')
+    enable_loop_rbv = Cpt(EpicsSignal, 'MC:03}TrajLoopFlag')
+
+    prepare_trajectory = Cpt(EpicsSignal, 'MC:03}PrepareTraj')
+    trajectory_ready = Cpt(EpicsSignal, 'MC:03}TrajInitPlc-Read')
+    start_trajectory = Cpt(EpicsSignal, 'MC:03}StartTraj')
+    stop_trajectory = Cpt(EpicsSignal, 'MC:03}StopTraj')
+    trajectory_running = Cpt(EpicsSignal,'MC:03}TrajRunning', write_pv='MC:03}TrajRunning-Set')
+    trajectory_progress = Cpt(EpicsSignal,'MC:03}TrajProgress')
+    trajectory_name = Cpt(EpicsSignal, 'MC:03}TrajFilename')
+
+    traj1 = Cpt(MonoTrajDesc, 'MC:03}Traj:1')
+    traj2 = Cpt(MonoTrajDesc, 'MC:03}Traj:2')
+    traj3 = Cpt(MonoTrajDesc, 'MC:03}Traj:3')
+    traj4 = Cpt(MonoTrajDesc, 'MC:03}Traj:4')
+    traj5 = Cpt(MonoTrajDesc, 'MC:03}Traj:5')
+    traj6 = Cpt(MonoTrajDesc, 'MC:03}Traj:6')
+    traj7 = Cpt(MonoTrajDesc, 'MC:03}Traj:7')
+    traj8 = Cpt(MonoTrajDesc, 'MC:03}Traj:8')
+    traj9 = Cpt(MonoTrajDesc, 'MC:03}Traj:9')
+
+    # trajectory_type = None
+
+    angle_offset = Cpt(EpicsSignal, 'Mono:1-Ax:E}Offset', limits=True)
+
+    def __init__(self, *args, enc = None, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.pulses_per_deg = 1/self.main_motor_res.get()
+        self.enc = enc
+        self._trajectory_type = None
+
+
+    @property
+    def trajectory_type(self):
+        return self._trajectory_type
+
+    @trajectory_type.setter
+    def trajectory_type(self, value):
+        self._trajectory_type = value
+
+
+
+
+mono2 = Mono2('XF:07BMA-OP{', enc = pb1.enc1, name='mono2')
+mono2.energy.kind = 'hinted'
+mono2.bragg.kind = 'hinted'
+
