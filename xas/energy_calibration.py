@@ -154,13 +154,13 @@ def get_ionchamber_gases_it(element: str, edge:str, channel='it'):
 
     return gases
 
-atomic_dict = {}
-for atomic_symbol in get_atomic_symbol():
-    atomic_dict[atomic_symbol] = {}
-    for edge in get_possible_edges(atomic_symbol):
-        atomic_dict[atomic_symbol][edge] = {}
-        atomic_dict[atomic_symbol][edge]['i0'] = get_ionchamber_gases_i0(element=atomic_symbol, edge=edge)
-        atomic_dict[atomic_symbol][edge]['it'] = get_ionchamber_gases_it(element=atomic_symbol, edge=edge)
+# atomic_dict = {}
+# for atomic_symbol in get_atomic_symbol():
+#     atomic_dict[atomic_symbol] = {}
+#     for edge in get_possible_edges(atomic_symbol):
+#         atomic_dict[atomic_symbol][edge] = {}
+#         atomic_dict[atomic_symbol][edge]['i0'] = get_ionchamber_gases_i0(element=atomic_symbol, edge=edge)
+#         atomic_dict[atomic_symbol][edge]['it'] = get_ionchamber_gases_it(element=atomic_symbol, edge=edge)
 
 atomic_dict_for_ionchamber_gases = {'Ti': {'K': {'i0': {'gases_initial': {'nitrogen': 80, 'helium': 420},
     'gases_final': {'nitrogen': 16, 'helium': 84},
