@@ -361,9 +361,20 @@ class trajectory_manager():
             if(f.readable()):
                 line = f.readline().decode('utf-8')
                 if line[0] == '#':
-                    element = line[line.find('element:') + 9: line.find(',')].lstrip()
-                    edge_value = line[line.find('edge:') + 6: line.find(',', line.find('edge:'))].lstrip()
-                    e0_value = line[line.find('E0:') + 4:].lstrip()
+                    print('In the load trajectory')
+
+                    dictionary = self.parse_trajectory_header(line)
+                    element = dictionary['element']
+                    edge_value = dictionary['edge']
+                    e0_value = dictionary['E0']
+                    if 'oscillatory' in dictionary.keys():
+                        oscillatory = dictionary['oscillatory']
+                    else:
+                        oscillatory = False
+
+                    # element = line[line.find('element:') + 9: line.find(',')].lstrip()
+                    # edge_value = line[line.find('edge:') + 6: line.find(',', line.find('edge:'))].lstrip()
+                    # e0_value = line[line.find('E0:') + 4:].lstrip()
                     curr_hhm_traj = getattr(self.hhm, 'traj{}'.format(new_file_path))
                     curr_hhm_traj.filename.put(traj_fn)
                     curr_hhm_traj.elem.put(element)
@@ -394,6 +405,16 @@ class trajectory_manager():
             print('[Load Trajectory] Completed!')
         else:
             print('[Load Trajectory] Fail! Not able to ssh into the controller...')
+
+    def parse_trajectory_header(self, line):
+        header = line[1:].split(',')
+        dictionary = {}
+        for head in header:
+            item = head.split(":")
+            dictionary[item[0].strip()] = item[1].strip()
+        return dictionary
+
+
 
     ########## init ##########
     # Transfer the trajectory from the flash to the ram memory in the controller
