@@ -1447,13 +1447,21 @@ def optimize_gains_plan(n_tries=3, trajectory_filename=None, mono_angle_offset=N
             print_to_gui(f'Extreme value {trace_extreme} for detector {channel.name}')
             if abs(trace_extreme) > threshold_hi:
                 print_to_gui(f'Decreasing gain for detector {channel.name}')
-                yield from channel.amp.set_gain_plan(current_gain - 1)
+                if current_gain == 6:
+                    print(f"Setting gain to minimum value")
+                    yield from channel.amp.set_gain_plan(6)
+                else:
+                    yield from channel.amp.set_gain_plan(current_gain - 1)
                 all_gains_are_good = False
             elif abs(trace_extreme) <= threshold_hi and abs(trace_extreme) > threshold_lo:
                 print_to_gui(f'Correct gain for detector {channel.name}')
             elif abs(trace_extreme) <= threshold_lo:
                 print(f'Increasing gain for detector {channel.name}')
-                yield from channel.amp.set_gain_plan(current_gain + 1)
+                if current_gain == 9:
+                    print(f"Setting gain to maximum value")
+                    yield from channel.amp.set_gain_plan(9)
+                else:
+                    yield from channel.amp.set_gain_plan(current_gain + 1)
                 all_gains_are_good = False
 
         if all_gains_are_good:
