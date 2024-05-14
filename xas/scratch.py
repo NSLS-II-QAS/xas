@@ -1406,6 +1406,7 @@ def test_flying_epics_motor():
 
 
 def optimize_gains_plan(n_tries=3, trajectory_filename=None, mono_angle_offset=None):
+    hhm = mono1
     # sys.stdout = kwargs.pop('stdout', sys.stdout)
 
     detectors = [apb_ave]
@@ -1418,11 +1419,13 @@ def optimize_gains_plan(n_tries=3, trajectory_filename=None, mono_angle_offset=N
     threshold_hi = 7000 #mV
     threshold_lo = 50 #mV
 
-    e_min, e_max = trajectory_manager.read_trajectory_limits()
+    e_min, e_max = trajectory_manager(hhm).read_trajectory_limits()
     scan_positions = np.arange(e_max + 50, e_min - 50, -200).tolist()
 
-    yield from actuate_photon_shutter_plan('Open')
-    yield from shutter.open_plan()
+    yield from bps.mv(shutter_fs, 'Close')
+
+    # yield from actuate_photon_shutter_plan('Open')
+    # yield from shutter.open_plan()
 
     for jj in range(n_tries):
 
@@ -1433,7 +1436,7 @@ def optimize_gains_plan(n_tries=3, trajectory_filename=None, mono_angle_offset=N
         all_gains_are_good = True
 
         for channel in channels:
-            current_gain = channel.amp.get_gain()[0]
+            current_gain = channel.amp.get_gain()
             if channel.polarity == 'neg':
                 trace_extreme = table[channel.name].min()
             else:
@@ -1444,23 +1447,44 @@ def optimize_gains_plan(n_tries=3, trajectory_filename=None, mono_angle_offset=N
             print_to_gui(f'Extreme value {trace_extreme} for detector {channel.name}')
             if abs(trace_extreme) > threshold_hi:
                 print_to_gui(f'Decreasing gain for detector {channel.name}')
-                yield from channel.amp.set_gain_plan(current_gain - 1, False)
+                yield from channel.amp.set_gain_plan(current_gain - 1)
                 all_gains_are_good = False
             elif abs(trace_extreme) <= threshold_hi and abs(trace_extreme) > threshold_lo:
                 print_to_gui(f'Correct gain for detector {channel.name}')
             elif abs(trace_extreme) <= threshold_lo:
                 print(f'Increasing gain for detector {channel.name}')
-                yield from channel.amp.set_gain_plan(current_gain + 1, False)
+                yield from channel.amp.set_gain_plan(current_gain + 1)
                 all_gains_are_good = False
 
         if all_gains_are_good:
             print(f'Gains are correct. Taking offsets..')
             break
 
-    yield from shutter.close_plan()
-    yield from get_offsets_plan()
+    yield from bps.mv(shutter_fs, 'Close')
+    yield from get_offsets_2(shutter=shutter_fs)
 
 
+def get_offsets_2(time:int = 2, *args, hutch_c=False, shutter=None, **kwargs):
+    sys.stdout = kwargs.pop('stdout', sys.stdout)
+
+    try:
+        yield from bps.mv(shutter, 'Close')
+        yield from current_suppression_plan()
+    except FailedStatus:
+        raise CannotActuateShutter(f'Error: Photon shutter failed to close.')
+    if hutch_c:
+        detectors = [apb_ave_c]
+    else:
+        detectors = [apb_ave]
+    uid = (yield from get_offsets_plan(detectors, time))
+
+    try:
+        yield from bps.mv(shutter, 'Open')
+    # except FailedStatus:
+    #     print('Error: Photon shutter failed to open')
+    except FailedStatus:
+         print('Error: Photon shutter failed to open')
+         pass
 
 class Mono2(Device):
     _default_configuration_attrs = ('bragg', 'energy', 'pico', 'diag')
