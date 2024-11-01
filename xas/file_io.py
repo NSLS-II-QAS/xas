@@ -176,8 +176,8 @@ def create_file_header(db,uid):
     hutchB_samplestage_y   = hutchB_samplestagePos[2]
     hutchB_samplestage_z   = hutchB_samplestagePos[3]
 
-    pe_verticalPos = hdr.start['pe_vertical']
-    pe_vertical = pe_verticalPos[0]
+    # pe_verticalPos = hdr.start['pe_vertical']
+    # pe_vertical = pe_verticalPos[0]
 
     cm_horizontalPos = hdr.start['cm_horizontal']
     frontend_cm_xu = cm_horizontalPos[0]
@@ -210,6 +210,47 @@ def create_file_header(db,uid):
         linkam_T = 0
         linkam_RR = 0
 
+    hutchC_ion_chamber_gain = hdr.start['keithley_gainsC']
+    hutchC_i0_gain = hutchC_ion_chamber_gain[0]
+    hutchC_it_gain = hutchC_ion_chamber_gain[1]
+    hutchC_ir_gain = hutchC_ion_chamber_gain[2]
+
+    hutchC_ionchamber_GasRate = hdr.start['ionchamber_ratesC']
+    hutchC_ion_chamber_gas_i0_He = hutchC_ionchamber_GasRate[0]
+    hutchC_ion_chamber_gas_i0_N2 = hutchC_ionchamber_GasRate[1]
+    hutchC_ion_chamber_gas_i0_Ar = hutchC_ionchamber_GasRate[2]
+    hutchC_ion_chamber_gas_it_N2 = hutchC_ionchamber_GasRate[3]
+    hutchC_ion_chamber_gas_it_Ar = hutchC_ionchamber_GasRate[4]
+
+    hutchC_incpathPos = hdr.start['incident_beampathC']
+    hutchC_incpath_vertical = hutchC_incpathPos[0]
+
+    hutchC_slitsPos = hdr.start['incident_slits_c']
+    hutchC_slits_top = hutchC_slitsPos[0]
+    hutchC_slits_bottom = hutchC_slitsPos[1]
+    hutchC_slits_inboard = hutchC_slitsPos[2]
+    hutchC_slits_outboard = hutchC_slitsPos[3]
+
+    hutchC_driftsTablePos = hdr.start['hutchC_table']
+    hutchC_drifts_table_hor_up = hutchC_driftsTablePos[0]
+    hutchC_drifts_table_hor_down = hutchC_driftsTablePos[1]
+    hutchC_drifts_table_vert_up_in = hutchC_driftsTablePos[2]
+    hutchC_drifts_table_vert_up_out = hutchC_driftsTablePos[3]
+    hutchC_drifts_table_vert_down = hutchC_driftsTablePos[4]
+
+
+    hutchC_driftsStagePos = hdr.start['drifts_stageC']
+    hutchC_drifts_z = hutchC_driftsStagePos[0]
+    hutchC_drifts_x = hutchC_driftsStagePos[1]
+
+    # hutchB_ionchamber_GasRate = hdr.start['ionchamber_ratesC']
+    # hutchB_ion_chamber_gas_i0_He = hutchB_ionchamber_GasRate[0]
+    # hutchB_ion_chamber_gas_i0_N2 = hutchB_ionchamber_GasRate[1]
+    # hutchB_ion_chamber_gas_i0_Ar = hutchB_ionchamber_GasRate[2]
+    # hutchB_ion_chamber_gas_it_N2 = hutchB_ionchamber_GasRate[3]
+    # hutchB_ion_chamber_gas_it_Ar = hutchB_ionchamber_GasRate[4]
+
+
     comments =   '# Facility: {}\n'\
                  '# Beamline: {}\n'\
                  '# Year: {}\n' \
@@ -235,7 +276,15 @@ def create_file_header(db,uid):
                  '# Incident Slits Positions B: TOP: {} mm Bottom: {} mm Inboard: {} mm Outboard: {} mm\n'\
                  '# Sample Stage Positions: Rotation: {} deg Horizontal: {:.2f} mm Vertical: {:.2f} mm Beam Direction: {:.2f} mm\n'\
                  '# PerkinElmer Vertical Position: {:.2f} mm\n'\
-                 '# Linkam Oven Temperature : {:.2f} C and Ramp Rate: {:.2f} C/min.\n'\
+                 '# Linkam Oven Temperature : {:.2f} C and Ramp Rate: {:.2f} C/min.\n' \
+                 '# Hutch C Keithley Gains I0: 1E{} V/A It: 1E{} V/A Iref: 1E{} V/A \n' \
+                 '# hutch C Ion Chamber Gas Flow Rates: I0: {:.2f} sccm He + {:.2f} sccm N2 + {:.2f} sccm Ar \n' \
+                 '# hutch C Ion Chamber Gas Flow Rates: It&Iref: {:.2f} sccm N2 + {:.2f} sccm Ar\n' \
+                 '# Incident Beam Path C Vertical: {:.2f} mm\n' \
+                 '# Incident Slits Positions C: TOP: {} mm Bottom: {} mm Inboard: {} mm Outboard: {} mm\n' \
+                 '# DRIFTS table in hutch C: Horizontal(up): {} mm Horizontal(down): {} mm\n' \
+                 '# DRIFTS table in hutch C: Vertical(up-in): {} mm Vertical(up-out): {} mm Vertical(down): {} mm\n' \
+                 '# DRIFTS stage in hutch C: Z (rotation): {} mm X: {} mm\n' \
                  '# Front End Mirror Horizontal Positions: Up: {:.2f} mm Down: {:.2f} mm\n#\n# '.format(
                   facility,
                   beamline,
@@ -261,8 +310,17 @@ def create_file_header(db,uid):
                   hutchB_incpath_vertical,
                   hutchB_slits_top, hutchB_slits_bottom, hutchB_slits_inboard, hutchB_slits_outboard,
                   hutchB_samplestage_rot, hutchB_samplestage_x, hutchB_samplestage_y, hutchB_samplestage_z,
-                  pe_vertical,
+                  350,
+                  # pe_vertical,
                   linkam_T, linkam_RR,
+                  hutchC_i0_gain, hutchC_it_gain, hutchC_ir_gain,
+                  hutchC_ion_chamber_gas_i0_He, hutchC_ion_chamber_gas_i0_N2, hutchC_ion_chamber_gas_i0_Ar,
+                  hutchC_ion_chamber_gas_it_N2, hutchC_ion_chamber_gas_it_Ar,
+                  hutchC_incpath_vertical,
+                  hutchC_slits_top, hutchC_slits_bottom, hutchC_slits_inboard, hutchC_slits_outboard,
+                  hutchC_drifts_table_hor_up, hutchC_drifts_table_hor_down,
+                  hutchC_drifts_table_vert_up_in, hutchC_drifts_table_vert_up_out, hutchC_drifts_table_vert_down,
+                  hutchC_drifts_z, hutchC_drifts_x,
                   frontend_cm_xu, frontend_cm_xd)
     return  comments
 

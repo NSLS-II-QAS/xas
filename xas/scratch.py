@@ -551,6 +551,8 @@ def theta2energy(theta, offset = 0):
 path = '/nsls2/data/qas-new/legacy/processed/2023/3/000000/'
 
 
+n
+
 
 
 def convert_step_scan_data(uid=None, filename = None):
@@ -1005,6 +1007,7 @@ for item in x.listFiles_bin.selectedItems():
     fname = os.path.join(x.workingFolder, item.text())
     df, header = load_binned_df_from_file(fname)
     print(fname)
+    uids.append(header['UID'])
     # uid_idx1 = header.find('Scan.uid:') + 10
     # uid_idx2 = header.find('\n', header.find('Scan:uid:'))
     # uid = header[uid_idx1: uid_idx2]
@@ -1292,7 +1295,7 @@ def save_interpolated_data(uids, path=None):
         hdr = db[uid]
 
 
-        apb_df, energy_df, energy_offset = load_apb_dataset_from_db(db, db[uid].start['uid'])
+        apb_df, energy_df, energy_offset = load_apb_dataset_from_db(db, db[uid]f.start['uid'])
         raw_df = translate_apb_dataset(apb_df, energy_df, energy_offset)
 
         key_base = 'i0'
@@ -1566,3 +1569,221 @@ mono2 = Mono2('XF:07BMA-OP{', enc = pb1.enc1, name='mono2')
 mono2.energy.kind = 'hinted'
 mono2.bragg.kind = 'hinted'
 
+hdr = db['7b13d166-04f9-4ca1-9db1-89685fe4d747']
+t = hdr.table()
+
+x = t.jj_slits_hutchB_xgap
+y = t.xs_channel1_rois_roi01_value
+
+hdr = db[-1]
+t = hdr.table()
+
+keys = [
+        # 'xs_channel1_rois_roi01_value',
+        # 'xs_channel1_rois_roi02_value',
+        'xs_channel1_rois_roi03_value',
+        # 'xs_channel1_rois_roi04_value',
+        # 'xs_channel2_rois_roi01_value',
+        # 'xs_channel2_rois_roi02_value',
+        'xs_channel2_rois_roi03_value',
+        # 'xs_channel2_rois_roi04_value',
+        # 'xs_channel3_rois_roi01_value',
+        # 'xs_channel3_rois_roi02_value',
+        'xs_channel3_rois_roi03_value',
+        # 'xs_channel3_rois_roi04_value',
+        # 'xs_channel4_rois_roi01_value',
+        # 'xs_channel4_rois_roi02_value',
+        'xs_channel4_rois_roi03_value',
+        # 'xs_channel4_rois_roi04_value',
+        ]
+
+plt.figure()
+for key in keys:
+    x = t.jj_slits_hutchB_xgap
+    plt.plot(x, t[key], label=key)
+
+# plt.ylim(0,2E6)
+plt.legend()
+plt.figure()
+plt.plot(x, y, label='Ch1 ROI1')
+
+
+path =  '/nsls2/data/qas-new/legacy/processed/2024/2/314672Pilatus'
+file_prefix = ('test_suit112')
+
+
+def pilatus_serializer_factory(name, doc):
+    ss = suitcase.tiff_series.Serializer(path, file_prefix)
+    return [ss], []
+
+pil_ss = RunRouter([pilatus_serializer_factory], db.reg.handler_reg)
+for name, doc in hdr.documents():
+    pil_ss(name, doc)
+
+
+
+class BPM(SingleTrigger, ProsilicaDetector):
+    polarity = 'pos'
+    image = Cpt(ImagePlugin, 'Image1:')
+    pva = Cpt(ImagePlugin, 'Pva1:')
+    # stats1 = Cpt(StatsPluginV33, 'Stats1:')
+    # stats2 = Cpt(StatsPluginV33, 'Stats2:')
+    # stats3 = Cpt(StatsPluginV33, 'Stats3:')
+    # stats4 = Cpt(StatsPluginV33, 'Stats4:')
+    #
+    # roi1 = Cpt(ROIPlugin, 'ROI1:')
+    # roi2 = Cpt(ROIPlugin, 'ROI2:')
+    # roi3 = Cpt(ROIPlugin, 'ROI3:')
+    # roi4 = Cpt(ROIPlugin, 'ROI4:')
+    #
+    # counts = Cpt(EpicsSignal, 'Pos:Counts')
+    # exp_time = Cpt(EpicsSignal, 'cam1:AcquireTime_RBV', write_pv='cam1:AcquireTime')
+    # image_mode = Cpt(EpicsSignal,'cam1:ImageMode')
+    # acquire = Cpt(EpicsSignal, 'cam1:Acquire')
+    #
+    # # Actuator
+    # insert = Cpt(EpicsSignal, 'Cmd:In-Cmd')
+    # inserted = Cpt(EpicsSignalRO, 'Sw:InLim-Sts')
+    #
+    # retract = Cpt(EpicsSignal, 'Cmd:Out-Cmd')
+    # retracted = Cpt(EpicsSignal, 'Sw:OutLim-Sts')
+    #
+    #
+    # def __init__(self, *args, **kwargs):
+    #     super().__init__(*args, **kwargs)
+    #     self.stage_sigs['cam.image_mode'] = 'Single'
+    #     self.polarity = 'pos'
+    #     self.image_height = self.image.height.get()
+    #     self.image_width = self.image.width.get()
+    #     self.frame_rate = self.cam.ps_frame_rate
+    #     self.stats1.total.polarity = 'pos'
+    #     self.stats2.total.polarity = 'pos'
+    #     self.stats3.total.polarity = 'pos'
+    #     self.stats4.total.polarity = 'pos'
+    #     # self._inserting = None
+    #     # self._retracting = None
+    #
+    # def set(self, command):
+    #     def callback(value, old_value, **kwargs):
+    #         if value == 1:
+    #             return True
+    #         return False
+    #
+    #     if command.lower() == 'insert':
+    #         status = SubscriptionStatus(self.inserted, callback)
+    #         self.insert.set('Insert')
+    #         return status
+    #
+    #     if command.lower() == 'retract':
+    #         status = SubscriptionStatus(self.retracted, callback)
+    #         self.retract.set('Retract')
+    #         return status
+    #
+    # def read_exposure_time(self):
+    #     return self.exp_time.get()
+    #
+    # def set_exposure_time(self, new_exp_time):
+    #     self.exp_time.set(new_exp_time).wait()
+    #
+    # def adjust_camera_exposure_time(self, roi_index=1,
+    #                                 target_max_counts=80, atol=10,
+    #                                 max_exp_time_thresh=1,
+    #                                 min_exp_time_thresh=0.00002, percentile=95):
+    #     stats = getattr(self, f'stats{roi_index}')
+    #     while True:
+    #         # current_maximum = stats.max_value.get()
+    #         current_maximum = np.percentile(self.image.array_data.get(), percentile)
+    #         current_exp_time = self.exp_time.get()
+    #         delta = np.abs(current_maximum - target_max_counts)
+    #         ratio = target_max_counts / current_maximum
+    #         new_exp_time = np.clip(current_exp_time * ratio, min_exp_time_thresh, max_exp_time_thresh)
+    #
+    #         if new_exp_time != current_exp_time:
+    #             if delta > atol:
+    #                 # self.exp_time.set(new_exp_time).wait()
+    #                 self.set_exposure_time(new_exp_time)
+    #                 ttime.sleep(np.max((0.5, new_exp_time)))
+    #                 continue
+    #         break
+    #
+    # def adjust_camera_exposure_time_full_image(self, **kwargs):
+    #     x = self.roi1.min_xyz.min_x.get()
+    #     y = self.roi1.min_xyz.min_y.get()
+    #     dx = self.roi1.size.x.get()
+    #     dy = self.roi1.size.y.get()
+    #
+    #     self.roi1.min_xyz.min_x.put(0)
+    #     self.roi1.min_xyz.min_y.put(0)
+    #     self.roi1.size.x.put(self.image_width)
+    #     self.roi1.size.y.put(self.image_height)
+    #
+    #     self.adjust_camera_exposure_time(**kwargs)
+    #
+    #     self.roi1.min_xyz.min_x.put(x)
+    #     self.roi1.min_xyz.min_y.put(y)
+    #     self.roi1.size.x.put(dx)
+    #     self.roi1.size.y.put(dy)
+    #
+    # def get_image_array_data_reshaped(self):
+    #     return np.reshape(self.image.array_data.get(), (self.image_height, self.image_width))
+
+    # @property
+    # def image_height(self):
+    #     return self.image.height.get()
+
+camera = BPM('XF:07BMB-BI{Diag:3}', name='camera')
+
+
+class Lakeshore336Channel(Device):
+    T = Cpt(EpicsSignalRO, 'Chan:A}T-I')
+    V = Cpt(EpicsSignalRO, 'Val:Sens-I')
+    status = Cpt(EpicsSignalRO, 'T-Sts')
+
+XF:07BM-B{LS:01-Out:1}T-SP
+XF:07BM-B{LS:01-Out:1}Val:Ramp-SP
+class Lakeshore336Setpoint(Device):
+    readback = Cpt(EpicsSignalRO, 'Chan:A}T-I')
+    setpoint = Cpt(EpicsSignal, 'Out:1}T-SP')
+    ramp_rate = Cpt(EpicsSignal, 'Out:1}Val:Ramp-SP')
+    done = Cpt(EpicsSignalRO, 'Out:1}Enbl:Ramp-Sts')
+    ramp_enabled = Cpt(EpicsSignal, 'Out:1}Enbl:Ramp-Sel')
+    done_value = 0
+
+lakeshore = Lakeshore336Setpoint('XF:07BM-B{LS:01-', name = 'lakeshore')
+
+
+RE(bp.list_scan([apb_c], jj_slits_hutchC.top, [0.2 , 0.25, 0.3 , 0.35, 0.4 , 0.45, 0.5, 0.55, 0.6, 0.65, 0.7], jj_slits_hutchC.bottom, [-0.2 , -0.25, -0.3 , -0.35, -0.4 , -0.45, -0.5, -0.55, -0.6, -0.65, -0.7]))
+
+
+plt.figure(); plt.plot(t['jj_slits_hutchC_top_user_setpoint'], t['apb_c_ch1'], '-ob', label='I0'); plt.plot(t['jj_slits_hutchC_top_user_setpoint'], t['apb_c_ch2'], '-or', label='It'); plt.legend()
+
+
+lis = list(np.arange(82, 80.95, -0.05))
+lis2 = list(np.arange(92.65, 93.7, 0.05))
+
+RE(bp.list_scan([apb_c], exp_table_c.vert_up_in, lis, exp_table_c.vert_up_out, lis, exp_table_c.vert_down, lis2))
+
+
+plt.figure();
+plt.plot(t['exp_table_c_vert_up_out'], t['apb_c_ch1'], '-ro', label='IO'); plt.plot(t['exp_table_c_vert_up_out'], t['apb_c_ch2'], '-bo', label='It'); plt.plot(t['exp_table_c_vert_up_out'], t['apb_c_ch3'], '-go', label='Ir'); plt.legend()
+
+plt.figure();
+plt.plot(t['exp_table_c_vert_down'], t['apb_c_ch1'], '-ro', label='IO'); plt.plot(t['exp_table_c_vert_down'], t['apb_c_ch2'], '-bo', label='It'); plt.plot(t['exp_table_c_vert_down'], t['apb_c_ch3'], '-go', label='Ir'); plt.legend()
+
+
+lis = list(np.arange(81, 83.05, 0.05))
+lis2 = list(np.arange(92, 94.05, 0.05))
+
+
+def move_en():
+    yield from bps.mv(stucking_mono_energy.energy, 20000)
+    yield from bps.mv(stucking_mono_energy.energy, 9000)
+
+lis = list(np.arange(91, 94.01, 0.05))
+RE(bp.list_scan([apb_c], exp_table_c.vert_down, lis))
+
+
+for i in range(-5, 1, 1):
+    hdr = db[i]
+    t = hdr.table()
+    plt.figure(t['ibp_hutchB'], t)

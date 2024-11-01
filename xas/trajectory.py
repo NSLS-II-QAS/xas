@@ -370,7 +370,7 @@ class trajectory_manager():
                     if 'oscillatory' in dictionary.keys():
                         oscillatory = dictionary['oscillatory']
                     else:
-                        oscillatory = False
+                        oscillatory = 'False'
 
                     # element = line[line.find('element:') + 9: line.find(',')].lstrip()
                     # edge_value = line[line.find('edge:') + 6: line.find(',', line.find('edge:'))].lstrip()
@@ -380,12 +380,15 @@ class trajectory_manager():
                     curr_hhm_traj.elem.put(element)
                     curr_hhm_traj.edge.put(edge_value)
                     curr_hhm_traj.e0.put(e0_value)
+                    curr_hhm_traj.type.put(oscillatory)
+
                 else:
                     curr_hhm_traj = getattr(self.hhm, 'traj{}'.format(new_file_path))
                     curr_hhm_traj.filename.put(traj_fn)
                     curr_hhm_traj.elem.put('')
                     curr_hhm_traj.edge.put('')
                     curr_hhm_traj.e0.put('')
+                    curr_hhm_traj.type.put('')
                     f.close()
                     f = open(orig_file_path + str(orig_file_name), 'rb')
                 result = ftp.storbinary('STOR ' + '/usrflash/lut/' + str(new_file_path) + '/' + new_file_name, f)
