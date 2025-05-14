@@ -1,21 +1,35 @@
 import xraydb
 import pandas as pd
 import numpy as np
+import json
 
-qas_foils = ['Ti', 'V', 'Cr', 'Mn', 'Fe', 'Co', 'Ni', 'Cu', 'Zn',
-             'Zr', 'Nb', 'Mo', 'Ru', 'Rh', 'Pd', 'Ag', 'Sn',
-             'W', 'Re', 'Ir', 'Pt', 'Au', 'Pb']
+qas_foils = ['Ti', 'V', 'Cr', 'Mn', 'Fe', 'Co', 'Ni', 
+              'Cu', 'Zn', 'Ta', 'W', 'Re', 'Ir', 'Pt', 
+              'Au', 'Se', 'Pb', 'Y', 'Zr', 'Nb', 'Mo', 
+              'Ru', 'Rh', 'Pd', 'Ag', 'Cd', 'In', 'Sn',
+            ]
 
-_qas_foil_data = []
-for element in qas_foils:
-    for edge in xraydb.xray_edges(element):
-        energy = xraydb.xray_edges(element)[edge].energy
-        if (energy >= 4500) and (energy <= 32000):
-            _qas_foil_data.append({'element': element,
-                          'edge':edge,
-                          'energy':energy})
+# _qas_foil_data = []
+# for element in qas_foils:
+#     for edge in xraydb.xray_edges(element):
+#         energy = xraydb.xray_edges(element)[edge].energy
+#         if (energy >= 4500) and (energy <= 32000):
+#             _qas_foil_data.append({'element': element,
+#                           'edge':edge,
+#                           'energy':energy})
 
-qas_foils_df = pd.DataFrame(_qas_foil_data)
+# qas_foils_df = pd.DataFrame(_qas_foil_data)
+
+
+qas_foils_path = '/nsls2/data/qas-new/shared/config/repos/xas/xas/qas_foil_edges.json'
+
+try:
+    with open(qas_foils_path) as fp:
+        qas_foils_dict = json.load(fp)
+except FileNotFoundError:
+    qas_foils_dict = {}
+
+qas_foils_df = pd.DataFrame(qas_foils_dict)
 
 def find_correct_foil(energy= None,  element='Cu', edge='K'):
     if not energy:
@@ -1146,3 +1160,6 @@ atomic_dict_for_ionchamber_gases = {'Ti': {'K': {'i0': {'gases_initial': {'nitro
    'it': {'gases_initial': {'nitrogen': 500, 'argon': 0},
     'gases_final': {'nitrogen': 100, 'argon': 0},
     'parameters': {'absorption': 40.03, 'energy': 5182.0}}}}}
+
+
+

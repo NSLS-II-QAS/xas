@@ -1,0 +1,212 @@
+[
+    {
+        "element": "Ti",
+        "edge": "K",
+        "energy": 4966.0
+    },
+    {
+        "element": "V",
+        "edge": "K",
+        "energy": 5465.0
+    },
+    {
+        "element": "Cr",
+        "edge": "K",
+        "energy": 5989.0
+    },
+    {
+        "element": "Mn",
+        "edge": "K",
+        "energy": 6539.0
+    },
+    {
+        "element": "Fe",
+        "edge": "K",
+        "energy": 7112.0
+    },
+    {
+        "element": "Co",
+        "edge": "K",
+        "energy": 7709.0
+    },
+    {
+        "element": "Ni",
+        "edge": "K",
+        "energy": 8333.0
+    },
+    {
+        "element": "Cu",
+        "edge": "K",
+        "energy": 8979.0
+    },
+    {
+        "element": "Zn",
+        "edge": "K",
+        "energy": 9659.0
+    },
+    {
+        "element": "Ta",
+        "edge": "L1",
+        "energy": 11682.0
+    },
+    {
+        "element": "Ta",
+        "edge": "L2",
+        "energy": 11136.0
+    },
+    {
+        "element": "Ta",
+        "edge": "L3",
+        "energy": 9881.0
+    },
+    {
+        "element": "W",
+        "edge": "L1",
+        "energy": 12100.0
+    },
+    {
+        "element": "W",
+        "edge": "L2",
+        "energy": 11544.0
+    },
+    {
+        "element": "W",
+        "edge": "L3",
+        "energy": 10207.0
+    },
+    {
+        "element": "Re",
+        "edge": "L1",
+        "energy": 12527.0
+    },
+    {
+        "element": "Re",
+        "edge": "L2",
+        "energy": 11959.0
+    },
+    {
+        "element": "Re",
+        "edge": "L3",
+        "energy": 10535.0
+    },
+    {
+        "element": "Ir",
+        "edge": "L1",
+        "energy": 13419.0
+    },
+    {
+        "element": "Ir",
+        "edge": "L2",
+        "energy": 12824.0
+    },
+    {
+        "element": "Ir",
+        "edge": "L3",
+        "energy": 11215.0
+    },
+    {
+        "element": "Pt",
+        "edge": "L1",
+        "energy": 13880.0
+    },
+    {
+        "element": "Pt",
+        "edge": "L2",
+        "energy": 13273.0
+    },
+    {
+        "element": "Pt",
+        "edge": "L3",
+        "energy": 11564.0
+    },
+    {
+        "element": "Au",
+        "edge": "L1",
+        "energy": 14353.0
+    },
+    {
+        "element": "Au",
+        "edge": "L2",
+        "energy": 13734.0
+    },
+    {
+        "element": "Au",
+        "edge": "L3",
+        "energy": 11919.0
+    },
+    {
+        "element": "Se",
+        "edge": "K",
+        "energy": 12658.0
+    },
+    {
+        "element": "Pb",
+        "edge": "L1",
+        "energy": 15861.0
+    },
+    {
+        "element": "Pb",
+        "edge": "L2",
+        "energy": 15200.0
+    },
+    {
+        "element": "Pb",
+        "edge": "L3",
+        "energy": 13035.0
+    },
+    {
+        "element": "Y",
+        "edge": "K",
+        "energy": 17038.0
+    },
+    {
+        "element": "Zr",
+        "edge": "K",
+        "energy": 17998.0
+    },
+    {
+        "element": "Nb",
+        "edge": "K",
+        "energy": 18986.0
+    },
+    {
+        "element": "Mo",
+        "edge": "K",
+        "energy": 20000.0
+    },
+    {
+        "element": "Ru",
+        "edge": "K",
+        "energy": 22117.0
+    },
+    {
+        "element": "Rh",
+        "edge": "K",
+        "energy": 23220.0
+    },
+    {
+        "element": "Pd",
+        "edge": "K",
+        "energy": 24350.0
+    },
+    {
+        "element": "Ag",
+        "edge": "K",
+        "energy": 25514.0
+    },
+    {
+        "element": "Cd",
+        "edge": "K",
+        "energy": 26711.0
+    },
+    {
+        "element": "In",
+        "edge": "K",
+        "energy": 27940.0
+    },
+    {
+        "element": "Sn",
+        "edge": "K",
+        "energy": 29200.0
+    }
+]

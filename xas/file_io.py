@@ -398,3 +398,51 @@ def read_header(filename):
     return header[:-len(line)]
 
 
+def save_binned_df_as_hdf5_file(path_to_file, df, comments, reorder=False):
+    (path, extension) = os.path.splitext(path_to_file)
+    path_to_file = path + '.dat'
+    path_to_file = validate_file_exists(path_to_file, file_type='bin')
+    cols = df.columns.tolist()
+    sliced_df = df.drop(['ch_1', 'ch_2', 'ch_3', 'ch_4'], axis=1, inplace=False)
+    sliced_cols = sliced_df.columns.tolist()
+    print(f'Columns before >>>>>>>>>>>>>>>>>>>>>>>> {cols}')
+    print(f'Sliced Columns before >>>>>>>>>>>>>>>>>>>>>>>> {sliced_cols}')
+    if reorder:
+        cols = cols[-1:] + cols[:-1]
+        sliced_cols = sliced_cols[-1:] + sliced_cols[:-1]
+    else:
+        cols = cols[::-1]
+        sliced_cols = sliced_cols[::-1]
+    print(f'Columns before >>>>>>>>>>>>>>>>>>>>>>>> {cols}')
+    print(f'Sliced Columns before >>>>>>>>>>>>>>>>>>>>>>>> {sliced_cols}')
+    sliced_df = sliced_df[sliced_cols]
+    df = df[cols]
+
+    fmt = '%12.6f ' + (' '.join(['%12.6e' for i in range(len(sliced_cols) - 1)]))
+    header = '  '.join(sliced_cols)
+    np.savetxt(path_to_file,
+               sliced_df.values,
+               fmt=fmt,
+               delimiter=" ",
+               header=header,
+
+               comments=comments)
+
+    # print("changing permissions to 774")
+    call(['chmod', '774', path_to_file])
+    print('dat and raw files are created')
+
+    print('creating_hdf5_file')
+
+    with h5py.File(path_to_file[:-4] + ".h5", 'a') as f:
+        for key in df.columns:
+            if key in ['ch_1', 'ch_2', 'ch_3', 'ch_4']:
+                f[key] = np.stack(df[key].values).astype(np.float64)
+            else:
+                f[key] = df[key].values.astype(np.float64)
+
+    print('creating_hdf5_file')
+
+    return path_to_file
+
+

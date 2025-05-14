@@ -6,13 +6,15 @@ import numpy as np
 
 from xas.db_io import load_apb_dataset_from_db, translate_apb_dataset, load_apb_trig_dataset_from_db, \
     load_xs3_dataset_from_db
-from .interpolate import interpolate
+from xas.interpolate import interpolate, interpolate_new
 
 # (load_dataset_from_files, create_file_header, validate_file_exists, validate_path_exists,
 #                   save_interpolated_df_as_file, save_binned_df_as_file, find_e0)
 
 from xas.process import load_apb_dataset_from_db, translate_apb_dataset, load_apb_trig_dataset_from_db, \
     load_xs3_dataset_from_db, interpolate, rebin
+
+from xas.db_io import load_xs3_dataset_from_db_new
 
 from xray import encoder2energy
 
@@ -24,7 +26,7 @@ apb_df, energy_df, energy_offset = load_apb_dataset_from_db(db, db[-1].start['ui
 raw_df = translate_apb_dataset(apb_df, energy_df, energy_offset)
 
 apb_trig_timestamps = load_apb_trig_dataset_from_db(db, db[-1].start['uid'])
-xs3_dict = load_xs3_dataset_from_db(db, db[-1].start['uid'], apb_trig_timestamps)
+xs3_dict = load_xs3_dataset_from_db_new(db, db[-1].start['uid'], apb_trig_timestamps)
 
 raw_df = {**raw_df, **xs3_dict}
 key_base = 'CHAN1ROI1'
@@ -1406,9 +1408,21 @@ def test_flying_epics_motor():
     plt.figure(1, clear=True)
     plt.plot(data1[:, 0] - data1[0, 0], data1[:, 1], '.-')
 
+from xraydb import atomic_symbol, atomic_symbol
+numbers = np.arange(22,101, 1)
+sym = [atomic_symbol(i) for i in numbers]
+edge_dict = {}
+for s in sym:
+    for e in ["K", "L1", "L2", "L3"]:
+        pass
 
 
-def optimize_gains_plan(n_tries=3, trajectory_filename=None, mono_angle_offset=None):
+dictionary = trajectory_manager(hhm).read_info()
+
+def read():
+    pass
+
+def optimize_gains_plan(n_tries=3, trajectory_filename=None, mono_angle_offset=None, slot_number=1):
     hhm = mono1
     # sys.stdout = kwargs.pop('stdout', sys.stdout)
 
@@ -1787,3 +1801,170 @@ for i in range(-5, 1, 1):
     hdr = db[i]
     t = hdr.table()
     plt.figure(t['ibp_hutchB'], t)
+
+
+
+def perform_diffraction_at_different_energy(sample_name='test', time=1, patterns=5, below_edge=200, e0=24350, edge_start=-30, edge_end=30, preedge_spacing=5, xanes_spacing=1, exafs_k_spacing=0.05):
+    energy_points = xas_energy_grid(e0-below_edge, e0, edge_start, edge_end, preedge_spacing, xanes_spacing, exafs_k_spacing)
+    for i, en in enumerate(energy_points):
+        yield from move_energy(en)
+        yield from count_pilatus_qas(sample_name=f'{sample_name}_{en:1.0f}eV_index_{i+1:03}', frame_count=1, subframe_count=patterns, subframe_time=time, delay=0.1)
+
+
+
+def xas_energy_grid(energy_range, e0, edge_start, edge_end, preedge_spacing, xanes_spacing, exafs_k_spacing):
+    energy_range_lo= np.min(energy_range)
+    energy_range_hi = np.max(energy_range)
+
+    preedge = np.arange(energy_range_lo, e0 + edge_start-1, preedge_spacing)
+
+    before_edge = np.arange(e0+edge_start,e0 + edge_start+7, 1)
+
+    edge = np.arange(e0+edge_start+7, e0+edge_end-7, xanes_spacing)
+
+    after_edge = np.arange(e0 + edge_end - 7, e0 + edge_end, 0.7)
+
+    eenergy = xray.k2e(xray.e2k(e0 + edge_end, e0), e0)
+    post_edge = np.array([])
+
+    while (eenergy < energy_range_hi):
+        kenergy = xray.e2k(eenergy, e0)
+        kenergy += exafs_k_spacing
+        eenergy = xray.k2e(kenergy, e0)
+        post_edge = np.append(post_edge, eenergy)
+    return np.concatenate((preedge, before_edge, edge, after_edge, post_edge))
+
+
+
+
+def interpolate_with_interp(dataset, key_base = None, sort=True):
+    # logger = get_logger()
+
+    interpolated_dataset = {}
+    min_timestamp = max([dataset.get(key).iloc[0, 0] for key in dataset])
+    max_timestamp = min([dataset.get(key).iloc[len(dataset.get(key)) - 1, 0] for key in
+                         dataset if len(dataset.get(key).iloc[:, 0]) > 5])
+    if key_base is None:
+        all_keys = []
+        time_step = []
+        for key in dataset.keys():
+            all_keys.append(key)
+            # time_step.append(np.mean(np.diff(dataset[key].timestamp)))
+            time_step.append(np.median(np.diff(dataset[key].timestamp)))
+        key_base = all_keys[np.argmax(time_step)]
+    timestamps = dataset[key_base].iloc[:,0]
+
+    condition = timestamps < min_timestamp
+    timestamps = timestamps[np.sum(condition):]
+
+    condition = timestamps > max_timestamp
+    timestamps = timestamps[: (len(timestamps) - np.sum(condition) - 1)]
+
+    interpolated_dataset['timestamp'] = timestamps.values
+
+    for key in dataset.keys():
+        print(f'Interpolating stream {key}...')
+        # logger.info(f'({ttime.ctime()}) Interpolating stream {key}...')
+        if key in ['ch_1', 'ch_2', 'ch_3', 'ch_4']:
+            time = dataset.get(key).iloc[:, 0].values.astype(np.float64)
+            val = np.stack(dataset.get(key).iloc[:, 1].values)
+
+            if len(dataset.get(key).iloc[:, 0]) > 5 * len(timestamps):
+                time = [time[0]] + [np.mean(array) for array in np.array_split(time[1:-1], len(timestamps))] + [time[-1]]
+                val = [val[0]] + [np.mean(array) for array in np.array_split(val[1:-1], len(timestamps))] + [val[-1]]
+                interpolated_dataset[key] = np.array([timestamps, np.interp(timestamps, time, val, left=None, right=None)]).transpose()
+        else:
+
+            time = dataset.get(key).iloc[:, 0].values
+            val = dataset.get(key).iloc[:, 1].values
+            if len(dataset.get(key).iloc[:, 0]) > 5 * len(timestamps):
+                time = [time[0]] + [np.mean(array) for array in np.array_split(time[1:-1], len(timestamps))] + [time[-1]]
+                val = [val[0]] + [np.mean(array) for array in np.array_split(val[1:-1], len(timestamps))] + [val[-1]]
+                interpolated_dataset[key] = np.array([timestamps, np.interp(timestamps, time, val)]).transpose()
+
+        interpolated_dataset[key] = np.array([timestamps, np.interp(timestamps, time, val)]).transpose()
+        # interpolator_func = interp1d(time, np.array([v for v in val]), axis=0)
+        # val_interp = interpolator_func(timestamps)
+        # if len(val_interp.shape) == 1:
+        #     interpolated_dataset[key] = val_interp
+        # else:
+        #     interpolated_dataset[key] = [v for v in val_interp]
+        # print(f'Interpolation of stream {key} is complete')
+        # logger.info(f'({ttime.ctime()}) Interpolation of stream {key} is complete')
+
+    intepolated_dataframe = pd.DataFrame(interpolated_dataset)
+    if sort:
+        return intepolated_dataframe.sort_values('energy')
+    else:
+        return intepolated_dataframe
+
+
+
+def interpolate_with_interp(dataset, key_base = None, sort=True):
+    # logger = get_logger()
+
+    interpolated_dataset = {}
+    min_timestamp = max([dataset.get(key).iloc[0, 0] for key in dataset])
+    max_timestamp = min([dataset.get(key).iloc[len(dataset.get(key)) - 1, 0] for key in
+                         dataset if len(dataset.get(key).iloc[:, 0]) > 5])
+    if key_base is None:
+        all_keys = []
+        time_step = []
+        for key in dataset.keys():
+            all_keys.append(key)
+            # time_step.append(np.mean(np.diff(dataset[key].timestamp)))
+            time_step.append(np.median(np.diff(dataset[key].timestamp)))
+        key_base = all_keys[np.argmax(time_step)]
+    timestamps = dataset[key_base].iloc[:,0]
+
+    condition = timestamps < min_timestamp
+    timestamps = timestamps[np.sum(condition):]
+
+    condition = timestamps > max_timestamp
+    timestamps = timestamps[: (len(timestamps) - np.sum(condition) - 1)]
+
+    interpolated_dataset['timestamp'] = timestamps.values
+
+    for key in dataset.keys():
+        print(f'Interpolating stream {key}...')
+        # logger.info(f'({ttime.ctime()}) Interpolating stream {key}...')
+        if key in ['ch_1', 'ch_2', 'ch_3', 'ch_4']:
+            print(f'---------------------------{key}----------------------------')
+            time = dataset.get(key).iloc[:, 0].values.astype(np.float64)
+            val = np.stack(dataset.get(key).iloc[:, 1].values)
+
+            shape_length = val.shape[0]
+            interpolated_flat = np.empty((len(timestamps), val.shape[1]), dtype=val.dtype)
+
+            for i in range(val.shape[1]):
+                interpolated_flat[:, i] = np.interp(timestamps, time, val[:, i])
+
+            interpolated_reshaped = interpolated_flat.astype('object')
+
+            interpolated_dataset[key] = [v for v in interpolated_reshaped]
+        else:
+            time = dataset.get(key).iloc[:, 0].values
+            val = dataset.get(key).iloc[:, 1].values
+            if len(dataset.get(key).iloc[:, 0]) > 5 * len(timestamps):
+                time = [time[0]] + [np.mean(array) for array in np.array_split(time[1:-1], len(timestamps))] + [time[-1]]
+                val = [val[0]] + [np.mean(array) for array in np.array_split(val[1:-1], len(timestamps))] + [val[-1]]
+
+            interpolator_func = interp1d(time, np.array([v for v in val]), axis=0)
+            val_interp = interpolator_func(timestamps)
+            interpolated_dataset[key] = val_interp
+
+
+        # interpolator_func = interp1d(time, np.array([v for v in val]), axis=0)
+        # val_interp = interpolator_func(timestamps)
+        # if len(val_interp.shape) == 1:
+        #     interpolated_dataset[key] = val_interp
+        # else:
+        #     interpolated_dataset[key] = [v for v in val_interp]
+        # print(f'Interpolation of stream {key} is complete')
+        # logger.info(f'({ttime.ctime()}) Interpolation of stream {key} is complete')
+
+    intepolated_dataframe = pd.DataFrame(interpolated_dataset)
+    if sort:
+        return intepolated_dataframe.sort_values('energy')
+    else:
+        return intepolated_dataframe
