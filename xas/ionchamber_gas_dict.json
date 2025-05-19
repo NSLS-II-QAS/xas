@@ -1,0 +1,5064 @@
+{
+    "Ti": {
+        "K": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 80,
+                    "helium": 420
+                },
+                "gases_final": {
+                    "nitrogen": 16,
+                    "helium": 84
+                },
+                "parameters": {
+                    "absorption": 9.0,
+                    "energy": 4966.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 500,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 100,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 44.11,
+                    "energy": 4966.0
+                }
+            }
+        }
+    },
+    "V": {
+        "K": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 110,
+                    "helium": 390
+                },
+                "gases_final": {
+                    "nitrogen": 22,
+                    "helium": 78
+                },
+                "parameters": {
+                    "absorption": 9.22,
+                    "energy": 5465.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 500,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 100,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 35.29,
+                    "energy": 5465.0
+                }
+            }
+        }
+    },
+    "Cr": {
+        "K": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 145,
+                    "helium": 355
+                },
+                "gases_final": {
+                    "nitrogen": 29,
+                    "helium": 71
+                },
+                "parameters": {
+                    "absorption": 9.19,
+                    "energy": 5989.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 500,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 100,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 28.08,
+                    "energy": 5989.0
+                }
+            }
+        }
+    },
+    "Mn": {
+        "K": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 190,
+                    "helium": 310
+                },
+                "gases_final": {
+                    "nitrogen": 38,
+                    "helium": 62
+                },
+                "parameters": {
+                    "absorption": 9.2,
+                    "energy": 6539.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 490,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 98,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 29.79,
+                    "energy": 6539.0
+                }
+            }
+        }
+    },
+    "Fe": {
+        "K": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 240,
+                    "helium": 260
+                },
+                "gases_final": {
+                    "nitrogen": 48,
+                    "helium": 52
+                },
+                "parameters": {
+                    "absorption": 9.0,
+                    "energy": 7112.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 480,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 96,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 30.0,
+                    "energy": 7112.0
+                }
+            }
+        }
+    },
+    "Co": {
+        "K": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 310,
+                    "helium": 190
+                },
+                "gases_final": {
+                    "nitrogen": 62,
+                    "helium": 38
+                },
+                "parameters": {
+                    "absorption": 9.09,
+                    "energy": 7709.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 465,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 93,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 31.56,
+                    "energy": 7709.0
+                }
+            }
+        }
+    },
+    "Ni": {
+        "K": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 390,
+                    "helium": 110
+                },
+                "gases_final": {
+                    "nitrogen": 78,
+                    "helium": 22
+                },
+                "parameters": {
+                    "absorption": 9.03,
+                    "energy": 8333.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 450,
+                    "argon": 50
+                },
+                "gases_final": {
+                    "nitrogen": 90,
+                    "argon": 10
+                },
+                "parameters": {
+                    "absorption": 31.72,
+                    "energy": 8333.0
+                }
+            }
+        }
+    },
+    "Cu": {
+        "K": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 490,
+                    "helium": 0
+                },
+                "gases_final": {
+                    "nitrogen": 98,
+                    "helium": 0
+                },
+                "parameters": {
+                    "absorption": 9.06,
+                    "energy": 8979.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 435,
+                    "argon": 65
+                },
+                "gases_final": {
+                    "nitrogen": 87,
+                    "argon": 13
+                },
+                "parameters": {
+                    "absorption": 31.05,
+                    "energy": 8979.0
+                }
+            }
+        }
+    },
+    "Zn": {
+        "K": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 490,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 98,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 10.63,
+                    "energy": 9659.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 415,
+                    "argon": 85
+                },
+                "gases_final": {
+                    "nitrogen": 83,
+                    "argon": 17
+                },
+                "parameters": {
+                    "absorption": 30.99,
+                    "energy": 9659.0
+                }
+            }
+        }
+    },
+    "Ga": {
+        "K": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 485,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 97,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 10.02,
+                    "energy": 10367.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 390,
+                    "argon": 110
+                },
+                "gases_final": {
+                    "nitrogen": 78,
+                    "argon": 22
+                },
+                "parameters": {
+                    "absorption": 31.2,
+                    "energy": 10367.0
+                }
+            }
+        }
+    },
+    "Ge": {
+        "K": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 475,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 95,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 10.41,
+                    "energy": 11103.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 360,
+                    "argon": 140
+                },
+                "gases_final": {
+                    "nitrogen": 72,
+                    "argon": 28
+                },
+                "parameters": {
+                    "absorption": 31.43,
+                    "energy": 11103.0
+                }
+            }
+        }
+    },
+    "As": {
+        "K": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 465,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 93,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 10.42,
+                    "energy": 11867.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 325,
+                    "argon": 175
+                },
+                "gases_final": {
+                    "nitrogen": 65,
+                    "argon": 35
+                },
+                "parameters": {
+                    "absorption": 31.58,
+                    "energy": 11867.0
+                }
+            }
+        }
+    },
+    "Se": {
+        "K": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 450,
+                    "argon": 50
+                },
+                "gases_final": {
+                    "nitrogen": 90,
+                    "argon": 10
+                },
+                "parameters": {
+                    "absorption": 10.92,
+                    "energy": 12658.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 285,
+                    "argon": 215
+                },
+                "gases_final": {
+                    "nitrogen": 57,
+                    "argon": 43
+                },
+                "parameters": {
+                    "absorption": 31.59,
+                    "energy": 12658.0
+                }
+            }
+        }
+    },
+    "Br": {
+        "K": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 440,
+                    "argon": 60
+                },
+                "gases_final": {
+                    "nitrogen": 88,
+                    "argon": 12
+                },
+                "parameters": {
+                    "absorption": 10.43,
+                    "energy": 13474.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 235,
+                    "argon": 265
+                },
+                "gases_final": {
+                    "nitrogen": 47,
+                    "argon": 53
+                },
+                "parameters": {
+                    "absorption": 31.91,
+                    "energy": 13474.0
+                }
+            }
+        }
+    },
+    "Kr": {
+        "K": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 420,
+                    "argon": 80
+                },
+                "gases_final": {
+                    "nitrogen": 84,
+                    "argon": 16
+                },
+                "parameters": {
+                    "absorption": 10.86,
+                    "energy": 14326.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 180,
+                    "argon": 320
+                },
+                "gases_final": {
+                    "nitrogen": 36,
+                    "argon": 64
+                },
+                "parameters": {
+                    "absorption": 31.88,
+                    "energy": 14326.0
+                }
+            }
+        }
+    },
+    "Rb": {
+        "K": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 400,
+                    "argon": 100
+                },
+                "gases_final": {
+                    "nitrogen": 80,
+                    "argon": 20
+                },
+                "parameters": {
+                    "absorption": 10.96,
+                    "energy": 15200.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 115,
+                    "argon": 385
+                },
+                "gases_final": {
+                    "nitrogen": 23,
+                    "argon": 77
+                },
+                "parameters": {
+                    "absorption": 31.97,
+                    "energy": 15200.0
+                }
+            }
+        }
+    },
+    "Sr": {
+        "K": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 380,
+                    "argon": 120
+                },
+                "gases_final": {
+                    "nitrogen": 76,
+                    "argon": 24
+                },
+                "parameters": {
+                    "absorption": 10.82,
+                    "energy": 16105.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 50,
+                    "argon": 450
+                },
+                "gases_final": {
+                    "nitrogen": 10,
+                    "argon": 90
+                },
+                "parameters": {
+                    "absorption": 31.47,
+                    "energy": 16105.0
+                }
+            }
+        }
+    },
+    "Y": {
+        "K": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 355,
+                    "argon": 145
+                },
+                "gases_final": {
+                    "nitrogen": 71,
+                    "argon": 29
+                },
+                "parameters": {
+                    "absorption": 10.82,
+                    "energy": 17038.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 50,
+                    "argon": 450
+                },
+                "gases_final": {
+                    "nitrogen": 10,
+                    "argon": 90
+                },
+                "parameters": {
+                    "absorption": 27.47,
+                    "energy": 17038.0
+                }
+            }
+        }
+    },
+    "Zr": {
+        "K": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 325,
+                    "argon": 175
+                },
+                "gases_final": {
+                    "nitrogen": 65,
+                    "argon": 35
+                },
+                "parameters": {
+                    "absorption": 10.89,
+                    "energy": 17998.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 50,
+                    "argon": 450
+                },
+                "gases_final": {
+                    "nitrogen": 10,
+                    "argon": 90
+                },
+                "parameters": {
+                    "absorption": 23.98,
+                    "energy": 17998.0
+                }
+            }
+        }
+    },
+    "Nb": {
+        "K": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 290,
+                    "argon": 210
+                },
+                "gases_final": {
+                    "nitrogen": 58,
+                    "argon": 42
+                },
+                "parameters": {
+                    "absorption": 10.98,
+                    "energy": 18986.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 50,
+                    "argon": 450
+                },
+                "gases_final": {
+                    "nitrogen": 10,
+                    "argon": 90
+                },
+                "parameters": {
+                    "absorption": 20.93,
+                    "energy": 18986.0
+                }
+            }
+        }
+    },
+    "Mo": {
+        "K": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 255,
+                    "argon": 245
+                },
+                "gases_final": {
+                    "nitrogen": 51,
+                    "argon": 49
+                },
+                "parameters": {
+                    "absorption": 10.87,
+                    "energy": 20000.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 50,
+                    "argon": 450
+                },
+                "gases_final": {
+                    "nitrogen": 10,
+                    "argon": 90
+                },
+                "parameters": {
+                    "absorption": 18.29,
+                    "energy": 20000.0
+                }
+            }
+        }
+    },
+    "Tc": {
+        "K": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 210,
+                    "argon": 290
+                },
+                "gases_final": {
+                    "nitrogen": 42,
+                    "argon": 58
+                },
+                "parameters": {
+                    "absorption": 10.95,
+                    "energy": 21044.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 50,
+                    "argon": 450
+                },
+                "gases_final": {
+                    "nitrogen": 10,
+                    "argon": 90
+                },
+                "parameters": {
+                    "absorption": 16.0,
+                    "energy": 21044.0
+                }
+            }
+        }
+    },
+    "Ru": {
+        "K": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 160,
+                    "argon": 340
+                },
+                "gases_final": {
+                    "nitrogen": 32,
+                    "argon": 68
+                },
+                "parameters": {
+                    "absorption": 10.99,
+                    "energy": 22117.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 50,
+                    "argon": 450
+                },
+                "gases_final": {
+                    "nitrogen": 10,
+                    "argon": 90
+                },
+                "parameters": {
+                    "absorption": 14.02,
+                    "energy": 22117.0
+                }
+            }
+        }
+    },
+    "Rh": {
+        "K": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 105,
+                    "argon": 395
+                },
+                "gases_final": {
+                    "nitrogen": 21,
+                    "argon": 79
+                },
+                "parameters": {
+                    "absorption": 10.98,
+                    "energy": 23220.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 50,
+                    "argon": 450
+                },
+                "gases_final": {
+                    "nitrogen": 10,
+                    "argon": 90
+                },
+                "parameters": {
+                    "absorption": 12.31,
+                    "energy": 23220.0
+                }
+            }
+        }
+    },
+    "Pd": {
+        "K": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 50,
+                    "argon": 450
+                },
+                "gases_final": {
+                    "nitrogen": 10,
+                    "argon": 90
+                },
+                "parameters": {
+                    "absorption": 10.82,
+                    "energy": 24350.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 50,
+                    "argon": 450
+                },
+                "gases_final": {
+                    "nitrogen": 10,
+                    "argon": 90
+                },
+                "parameters": {
+                    "absorption": 10.82,
+                    "energy": 24350.0
+                }
+            }
+        }
+    },
+    "Ag": {
+        "K": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 50,
+                    "argon": 450
+                },
+                "gases_final": {
+                    "nitrogen": 10,
+                    "argon": 90
+                },
+                "parameters": {
+                    "absorption": 9.54,
+                    "energy": 25514.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 50,
+                    "argon": 450
+                },
+                "gases_final": {
+                    "nitrogen": 10,
+                    "argon": 90
+                },
+                "parameters": {
+                    "absorption": 9.54,
+                    "energy": 25514.0
+                }
+            }
+        }
+    },
+    "Cd": {
+        "K": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 50,
+                    "argon": 450
+                },
+                "gases_final": {
+                    "nitrogen": 10,
+                    "argon": 90
+                },
+                "parameters": {
+                    "absorption": 8.42,
+                    "energy": 26711.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 50,
+                    "argon": 450
+                },
+                "gases_final": {
+                    "nitrogen": 10,
+                    "argon": 90
+                },
+                "parameters": {
+                    "absorption": 8.42,
+                    "energy": 26711.0
+                }
+            }
+        }
+    },
+    "In": {
+        "K": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 50,
+                    "argon": 450
+                },
+                "gases_final": {
+                    "nitrogen": 10,
+                    "argon": 90
+                },
+                "parameters": {
+                    "absorption": 7.45,
+                    "energy": 27940.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 50,
+                    "argon": 450
+                },
+                "gases_final": {
+                    "nitrogen": 10,
+                    "argon": 90
+                },
+                "parameters": {
+                    "absorption": 7.45,
+                    "energy": 27940.0
+                }
+            }
+        }
+    },
+    "Sn": {
+        "K": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 50,
+                    "argon": 450
+                },
+                "gases_final": {
+                    "nitrogen": 10,
+                    "argon": 90
+                },
+                "parameters": {
+                    "absorption": 6.6,
+                    "energy": 29200.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 50,
+                    "argon": 450
+                },
+                "gases_final": {
+                    "nitrogen": 10,
+                    "argon": 90
+                },
+                "parameters": {
+                    "absorption": 6.6,
+                    "energy": 29200.0
+                }
+            }
+        }
+    },
+    "Sb": {
+        "K": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 50,
+                    "argon": 450
+                },
+                "gases_final": {
+                    "nitrogen": 10,
+                    "argon": 90
+                },
+                "parameters": {
+                    "absorption": 5.87,
+                    "energy": 30491.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 50,
+                    "argon": 450
+                },
+                "gases_final": {
+                    "nitrogen": 10,
+                    "argon": 90
+                },
+                "parameters": {
+                    "absorption": 5.87,
+                    "energy": 30491.0
+                }
+            }
+        },
+        "L1": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 70,
+                    "helium": 430
+                },
+                "gases_final": {
+                    "nitrogen": 14,
+                    "helium": 86
+                },
+                "parameters": {
+                    "absorption": 9.32,
+                    "energy": 4698.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 500,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 100,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 49.75,
+                    "energy": 4698.0
+                }
+            }
+        }
+    },
+    "Te": {
+        "K": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 50,
+                    "argon": 450
+                },
+                "gases_final": {
+                    "nitrogen": 10,
+                    "argon": 90
+                },
+                "parameters": {
+                    "absorption": 5.24,
+                    "energy": 31814.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 50,
+                    "argon": 450
+                },
+                "gases_final": {
+                    "nitrogen": 10,
+                    "argon": 90
+                },
+                "parameters": {
+                    "absorption": 5.24,
+                    "energy": 31814.0
+                }
+            }
+        },
+        "L1": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 80,
+                    "helium": 420
+                },
+                "gases_final": {
+                    "nitrogen": 16,
+                    "helium": 84
+                },
+                "parameters": {
+                    "absorption": 9.15,
+                    "energy": 4939.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 500,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 100,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 44.65,
+                    "energy": 4939.0
+                }
+            }
+        },
+        "L2": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 65,
+                    "helium": 435
+                },
+                "gases_final": {
+                    "nitrogen": 13,
+                    "helium": 87
+                },
+                "parameters": {
+                    "absorption": 9.16,
+                    "energy": 4612.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 500,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 100,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 51.69,
+                    "energy": 4612.0
+                }
+            }
+        }
+    },
+    "I": {
+        "L1": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 95,
+                    "helium": 405
+                },
+                "gases_final": {
+                    "nitrogen": 19,
+                    "helium": 81
+                },
+                "parameters": {
+                    "absorption": 9.33,
+                    "energy": 5188.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 500,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 100,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 39.93,
+                    "energy": 5188.0
+                }
+            }
+        },
+        "L2": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 75,
+                    "helium": 425
+                },
+                "gases_final": {
+                    "nitrogen": 15,
+                    "helium": 85
+                },
+                "parameters": {
+                    "absorption": 9.06,
+                    "energy": 4852.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 500,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 100,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 46.43,
+                    "energy": 4852.0
+                }
+            }
+        },
+        "L3": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 65,
+                    "helium": 435
+                },
+                "gases_final": {
+                    "nitrogen": 13,
+                    "helium": 87
+                },
+                "parameters": {
+                    "absorption": 9.48,
+                    "energy": 4557.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 500,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 100,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 52.97,
+                    "energy": 4557.0
+                }
+            }
+        }
+    },
+    "Xe": {
+        "L1": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 110,
+                    "helium": 390
+                },
+                "gases_final": {
+                    "nitrogen": 22,
+                    "helium": 78
+                },
+                "parameters": {
+                    "absorption": 9.28,
+                    "energy": 5453.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 500,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 100,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 35.48,
+                    "energy": 5453.0
+                }
+            }
+        },
+        "L2": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 90,
+                    "helium": 410
+                },
+                "gases_final": {
+                    "nitrogen": 18,
+                    "helium": 82
+                },
+                "parameters": {
+                    "absorption": 9.28,
+                    "energy": 5107.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 500,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 100,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 41.4,
+                    "energy": 5107.0
+                }
+            }
+        },
+        "L3": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 75,
+                    "helium": 425
+                },
+                "gases_final": {
+                    "nitrogen": 15,
+                    "helium": 85
+                },
+                "parameters": {
+                    "absorption": 9.42,
+                    "energy": 4786.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 500,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 100,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 47.82,
+                    "energy": 4786.0
+                }
+            }
+        }
+    },
+    "Cs": {
+        "L1": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 125,
+                    "helium": 375
+                },
+                "gases_final": {
+                    "nitrogen": 25,
+                    "helium": 75
+                },
+                "parameters": {
+                    "absorption": 9.15,
+                    "energy": 5714.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 500,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 100,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 31.63,
+                    "energy": 5714.0
+                }
+            }
+        },
+        "L2": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 105,
+                    "helium": 395
+                },
+                "gases_final": {
+                    "nitrogen": 21,
+                    "helium": 79
+                },
+                "parameters": {
+                    "absorption": 9.34,
+                    "energy": 5359.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 500,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 100,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 36.99,
+                    "energy": 5359.0
+                }
+            }
+        },
+        "L3": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 85,
+                    "helium": 415
+                },
+                "gases_final": {
+                    "nitrogen": 17,
+                    "helium": 83
+                },
+                "parameters": {
+                    "absorption": 9.28,
+                    "energy": 5012.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 500,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 100,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 43.21,
+                    "energy": 5012.0
+                }
+            }
+        }
+    },
+    "Ba": {
+        "L1": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 145,
+                    "helium": 355
+                },
+                "gases_final": {
+                    "nitrogen": 29,
+                    "helium": 71
+                },
+                "parameters": {
+                    "absorption": 9.19,
+                    "energy": 5989.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 500,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 100,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 28.08,
+                    "energy": 5989.0
+                }
+            }
+        },
+        "L2": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 120,
+                    "helium": 380
+                },
+                "gases_final": {
+                    "nitrogen": 24,
+                    "helium": 76
+                },
+                "parameters": {
+                    "absorption": 9.21,
+                    "energy": 5624.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 500,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 100,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 32.9,
+                    "energy": 5624.0
+                }
+            }
+        },
+        "L3": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 95,
+                    "helium": 405
+                },
+                "gases_final": {
+                    "nitrogen": 19,
+                    "helium": 81
+                },
+                "parameters": {
+                    "absorption": 9.03,
+                    "energy": 5247.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 500,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 100,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 38.89,
+                    "energy": 5247.0
+                }
+            }
+        }
+    },
+    "La": {
+        "L1": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 165,
+                    "helium": 335
+                },
+                "gases_final": {
+                    "nitrogen": 33,
+                    "helium": 67
+                },
+                "parameters": {
+                    "absorption": 9.11,
+                    "energy": 6266.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 495,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 99,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 29.11,
+                    "energy": 6266.0
+                }
+            }
+        },
+        "L2": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 135,
+                    "helium": 365
+                },
+                "gases_final": {
+                    "nitrogen": 27,
+                    "helium": 73
+                },
+                "parameters": {
+                    "absorption": 9.01,
+                    "energy": 5891.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 500,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 100,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 29.29,
+                    "energy": 5891.0
+                }
+            }
+        },
+        "L3": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 110,
+                    "helium": 390
+                },
+                "gases_final": {
+                    "nitrogen": 22,
+                    "helium": 78
+                },
+                "parameters": {
+                    "absorption": 9.13,
+                    "energy": 5483.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 500,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 100,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 35.01,
+                    "energy": 5483.0
+                }
+            }
+        }
+    },
+    "Ce": {
+        "L1": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 190,
+                    "helium": 310
+                },
+                "gases_final": {
+                    "nitrogen": 38,
+                    "helium": 62
+                },
+                "parameters": {
+                    "absorption": 9.16,
+                    "energy": 6548.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 490,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 98,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 29.69,
+                    "energy": 6548.0
+                }
+            }
+        },
+        "L2": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 155,
+                    "helium": 345
+                },
+                "gases_final": {
+                    "nitrogen": 31,
+                    "helium": 69
+                },
+                "parameters": {
+                    "absorption": 9.0,
+                    "energy": 6164.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 495,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 99,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 30.33,
+                    "energy": 6164.0
+                }
+            }
+        },
+        "L3": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 125,
+                    "helium": 375
+                },
+                "gases_final": {
+                    "nitrogen": 25,
+                    "helium": 75
+                },
+                "parameters": {
+                    "absorption": 9.11,
+                    "energy": 5723.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 500,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 100,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 31.5,
+                    "energy": 5723.0
+                }
+            }
+        }
+    },
+    "Pr": {
+        "L1": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 215,
+                    "helium": 285
+                },
+                "gases_final": {
+                    "nitrogen": 43,
+                    "helium": 57
+                },
+                "parameters": {
+                    "absorption": 9.1,
+                    "energy": 6835.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 485,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 97,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 29.91,
+                    "energy": 6835.0
+                }
+            }
+        },
+        "L2": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 180,
+                    "helium": 320
+                },
+                "gases_final": {
+                    "nitrogen": 36,
+                    "helium": 64
+                },
+                "parameters": {
+                    "absorption": 9.14,
+                    "energy": 6440.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 490,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 98,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 30.92,
+                    "energy": 6440.0
+                }
+            }
+        },
+        "L3": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 145,
+                    "helium": 355
+                },
+                "gases_final": {
+                    "nitrogen": 29,
+                    "helium": 71
+                },
+                "parameters": {
+                    "absorption": 9.3,
+                    "energy": 5964.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 500,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 100,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 28.38,
+                    "energy": 5964.0
+                }
+            }
+        }
+    },
+    "Nd": {
+        "L1": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 245,
+                    "helium": 255
+                },
+                "gases_final": {
+                    "nitrogen": 49,
+                    "helium": 51
+                },
+                "parameters": {
+                    "absorption": 9.13,
+                    "energy": 7126.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 480,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 96,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 29.86,
+                    "energy": 7126.0
+                }
+            }
+        },
+        "L2": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 205,
+                    "helium": 295
+                },
+                "gases_final": {
+                    "nitrogen": 41,
+                    "helium": 59
+                },
+                "parameters": {
+                    "absorption": 9.13,
+                    "energy": 6722.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 485,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 97,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 31.13,
+                    "energy": 6722.0
+                }
+            }
+        },
+        "L3": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 160,
+                    "helium": 340
+                },
+                "gases_final": {
+                    "nitrogen": 32,
+                    "helium": 68
+                },
+                "parameters": {
+                    "absorption": 9.09,
+                    "energy": 6208.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 495,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 99,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 29.8,
+                    "energy": 6208.0
+                }
+            }
+        }
+    },
+    "Pm": {
+        "L1": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 275,
+                    "helium": 225
+                },
+                "gases_final": {
+                    "nitrogen": 55,
+                    "helium": 45
+                },
+                "parameters": {
+                    "absorption": 9.03,
+                    "energy": 7428.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 475,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 95,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 29.55,
+                    "energy": 7428.0
+                }
+            }
+        },
+        "L2": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 230,
+                    "helium": 270
+                },
+                "gases_final": {
+                    "nitrogen": 46,
+                    "helium": 54
+                },
+                "parameters": {
+                    "absorption": 9.0,
+                    "energy": 7013.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 480,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 96,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 31.03,
+                    "energy": 7013.0
+                }
+            }
+        },
+        "L3": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 180,
+                    "helium": 320
+                },
+                "gases_final": {
+                    "nitrogen": 36,
+                    "helium": 64
+                },
+                "parameters": {
+                    "absorption": 9.06,
+                    "energy": 6459.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 490,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 98,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 30.7,
+                    "energy": 6459.0
+                }
+            }
+        }
+    },
+    "Sm": {
+        "L1": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 315,
+                    "helium": 185
+                },
+                "gases_final": {
+                    "nitrogen": 63,
+                    "helium": 37
+                },
+                "parameters": {
+                    "absorption": 9.13,
+                    "energy": 7737.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 465,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 93,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 31.29,
+                    "energy": 7737.0
+                }
+            }
+        },
+        "L2": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 265,
+                    "helium": 235
+                },
+                "gases_final": {
+                    "nitrogen": 53,
+                    "helium": 47
+                },
+                "parameters": {
+                    "absorption": 9.13,
+                    "energy": 7312.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 475,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 95,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 30.69,
+                    "energy": 7312.0
+                }
+            }
+        },
+        "L3": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 205,
+                    "helium": 295
+                },
+                "gases_final": {
+                    "nitrogen": 41,
+                    "helium": 59
+                },
+                "parameters": {
+                    "absorption": 9.15,
+                    "energy": 6716.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 485,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 97,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 31.2,
+                    "energy": 6716.0
+                }
+            }
+        }
+    },
+    "Eu": {
+        "L1": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 355,
+                    "helium": 145
+                },
+                "gases_final": {
+                    "nitrogen": 71,
+                    "helium": 29
+                },
+                "parameters": {
+                    "absorption": 9.12,
+                    "energy": 8052.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 460,
+                    "argon": 40
+                },
+                "gases_final": {
+                    "nitrogen": 92,
+                    "argon": 8
+                },
+                "parameters": {
+                    "absorption": 30.47,
+                    "energy": 8052.0
+                }
+            }
+        },
+        "L2": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 300,
+                    "helium": 200
+                },
+                "gases_final": {
+                    "nitrogen": 60,
+                    "helium": 40
+                },
+                "parameters": {
+                    "absorption": 9.12,
+                    "energy": 7617.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 470,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 94,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 30.17,
+                    "energy": 7617.0
+                }
+            }
+        },
+        "L3": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 230,
+                    "helium": 270
+                },
+                "gases_final": {
+                    "nitrogen": 46,
+                    "helium": 54
+                },
+                "parameters": {
+                    "absorption": 9.14,
+                    "energy": 6977.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 480,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 96,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 31.41,
+                    "energy": 6977.0
+                }
+            }
+        }
+    },
+    "Gd": {
+        "L1": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 395,
+                    "helium": 105
+                },
+                "gases_final": {
+                    "nitrogen": 79,
+                    "helium": 21
+                },
+                "parameters": {
+                    "absorption": 9.01,
+                    "energy": 8376.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 450,
+                    "argon": 50
+                },
+                "gases_final": {
+                    "nitrogen": 90,
+                    "argon": 10
+                },
+                "parameters": {
+                    "absorption": 31.34,
+                    "energy": 8376.0
+                }
+            }
+        },
+        "L2": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 335,
+                    "helium": 165
+                },
+                "gases_final": {
+                    "nitrogen": 67,
+                    "helium": 33
+                },
+                "parameters": {
+                    "absorption": 9.02,
+                    "energy": 7930.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 460,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 92,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 31.59,
+                    "energy": 7930.0
+                }
+            }
+        },
+        "L3": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 255,
+                    "helium": 245
+                },
+                "gases_final": {
+                    "nitrogen": 51,
+                    "helium": 49
+                },
+                "parameters": {
+                    "absorption": 9.04,
+                    "energy": 7243.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 475,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 95,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 31.39,
+                    "energy": 7243.0
+                }
+            }
+        }
+    },
+    "Tb": {
+        "L1": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 445,
+                    "helium": 55
+                },
+                "gases_final": {
+                    "nitrogen": 89,
+                    "helium": 11
+                },
+                "parameters": {
+                    "absorption": 9.02,
+                    "energy": 8708.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 440,
+                    "argon": 60
+                },
+                "gases_final": {
+                    "nitrogen": 88,
+                    "argon": 12
+                },
+                "parameters": {
+                    "absorption": 31.79,
+                    "energy": 8708.0
+                }
+            }
+        },
+        "L2": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 380,
+                    "helium": 120
+                },
+                "gases_final": {
+                    "nitrogen": 76,
+                    "helium": 24
+                },
+                "parameters": {
+                    "absorption": 9.06,
+                    "energy": 8252.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 455,
+                    "argon": 45
+                },
+                "gases_final": {
+                    "nitrogen": 91,
+                    "argon": 9
+                },
+                "parameters": {
+                    "absorption": 30.62,
+                    "energy": 8252.0
+                }
+            }
+        },
+        "L3": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 285,
+                    "helium": 215
+                },
+                "gases_final": {
+                    "nitrogen": 57,
+                    "helium": 43
+                },
+                "parameters": {
+                    "absorption": 9.04,
+                    "energy": 7514.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 470,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 94,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 31.17,
+                    "energy": 7514.0
+                }
+            }
+        }
+    },
+    "Dy": {
+        "L1": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 495,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 99,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 10.9,
+                    "energy": 9046.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 430,
+                    "argon": 70
+                },
+                "gases_final": {
+                    "nitrogen": 86,
+                    "argon": 14
+                },
+                "parameters": {
+                    "absorption": 31.94,
+                    "energy": 9046.0
+                }
+            }
+        },
+        "L2": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 425,
+                    "helium": 75
+                },
+                "gases_final": {
+                    "nitrogen": 85,
+                    "helium": 15
+                },
+                "parameters": {
+                    "absorption": 9.01,
+                    "energy": 8581.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 445,
+                    "argon": 55
+                },
+                "gases_final": {
+                    "nitrogen": 89,
+                    "argon": 11
+                },
+                "parameters": {
+                    "absorption": 31.27,
+                    "energy": 8581.0
+                }
+            }
+        },
+        "L3": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 320,
+                    "helium": 180
+                },
+                "gases_final": {
+                    "nitrogen": 64,
+                    "helium": 36
+                },
+                "parameters": {
+                    "absorption": 9.09,
+                    "energy": 7790.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 465,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 93,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 30.79,
+                    "energy": 7790.0
+                }
+            }
+        }
+    },
+    "Ho": {
+        "L1": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 495,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 99,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 9.81,
+                    "energy": 9394.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 420,
+                    "argon": 80
+                },
+                "gases_final": {
+                    "nitrogen": 84,
+                    "argon": 16
+                },
+                "parameters": {
+                    "absorption": 31.81,
+                    "energy": 9394.0
+                }
+            }
+        },
+        "L2": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 480,
+                    "helium": 0
+                },
+                "gases_final": {
+                    "nitrogen": 96,
+                    "helium": 0
+                },
+                "parameters": {
+                    "absorption": 9.05,
+                    "energy": 8918.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 435,
+                    "argon": 65
+                },
+                "gases_final": {
+                    "nitrogen": 87,
+                    "argon": 13
+                },
+                "parameters": {
+                    "absorption": 31.55,
+                    "energy": 8918.0
+                }
+            }
+        },
+        "L3": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 355,
+                    "helium": 145
+                },
+                "gases_final": {
+                    "nitrogen": 71,
+                    "helium": 29
+                },
+                "parameters": {
+                    "absorption": 9.06,
+                    "energy": 8071.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 460,
+                    "argon": 40
+                },
+                "gases_final": {
+                    "nitrogen": 92,
+                    "argon": 8
+                },
+                "parameters": {
+                    "absorption": 30.3,
+                    "energy": 8071.0
+                }
+            }
+        }
+    },
+    "Er": {
+        "L1": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 490,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 98,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 10.36,
+                    "energy": 9751.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 410,
+                    "argon": 90
+                },
+                "gases_final": {
+                    "nitrogen": 82,
+                    "argon": 18
+                },
+                "parameters": {
+                    "absorption": 31.47,
+                    "energy": 9751.0
+                }
+            }
+        },
+        "L2": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 495,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 99,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 10.2,
+                    "energy": 9264.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 425,
+                    "argon": 75
+                },
+                "gases_final": {
+                    "nitrogen": 85,
+                    "argon": 15
+                },
+                "parameters": {
+                    "absorption": 31.54,
+                    "energy": 9264.0
+                }
+            }
+        },
+        "L3": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 395,
+                    "helium": 105
+                },
+                "gases_final": {
+                    "nitrogen": 79,
+                    "helium": 21
+                },
+                "parameters": {
+                    "absorption": 9.06,
+                    "energy": 8358.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 450,
+                    "argon": 50
+                },
+                "gases_final": {
+                    "nitrogen": 90,
+                    "argon": 10
+                },
+                "parameters": {
+                    "absorption": 31.5,
+                    "energy": 8358.0
+                }
+            }
+        }
+    },
+    "Tm": {
+        "L1": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 485,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 97,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 10.72,
+                    "energy": 10116.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 400,
+                    "argon": 100
+                },
+                "gases_final": {
+                    "nitrogen": 80,
+                    "argon": 20
+                },
+                "parameters": {
+                    "absorption": 30.97,
+                    "energy": 10116.0
+                }
+            }
+        },
+        "L2": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 490,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 98,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 10.76,
+                    "energy": 9617.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 415,
+                    "argon": 85
+                },
+                "gases_final": {
+                    "nitrogen": 83,
+                    "argon": 17
+                },
+                "parameters": {
+                    "absorption": 31.31,
+                    "energy": 9617.0
+                }
+            }
+        },
+        "L3": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 435,
+                    "helium": 65
+                },
+                "gases_final": {
+                    "nitrogen": 87,
+                    "helium": 13
+                },
+                "parameters": {
+                    "absorption": 9.01,
+                    "energy": 8648.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 445,
+                    "argon": 55
+                },
+                "gases_final": {
+                    "nitrogen": 89,
+                    "argon": 11
+                },
+                "parameters": {
+                    "absorption": 30.7,
+                    "energy": 8648.0
+                }
+            }
+        }
+    },
+    "Yb": {
+        "L1": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 480,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 96,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 10.94,
+                    "energy": 10486.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 385,
+                    "argon": 115
+                },
+                "gases_final": {
+                    "nitrogen": 77,
+                    "argon": 23
+                },
+                "parameters": {
+                    "absorption": 31.31,
+                    "energy": 10486.0
+                }
+            }
+        },
+        "L2": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 490,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 98,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 9.72,
+                    "energy": 9978.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 400,
+                    "argon": 100
+                },
+                "gases_final": {
+                    "nitrogen": 80,
+                    "argon": 20
+                },
+                "parameters": {
+                    "absorption": 31.98,
+                    "energy": 9978.0
+                }
+            }
+        },
+        "L3": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 485,
+                    "helium": 0
+                },
+                "gases_final": {
+                    "nitrogen": 97,
+                    "helium": 0
+                },
+                "parameters": {
+                    "absorption": 9.07,
+                    "energy": 8944.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 435,
+                    "argon": 65
+                },
+                "gases_final": {
+                    "nitrogen": 87,
+                    "argon": 13
+                },
+                "parameters": {
+                    "absorption": 31.34,
+                    "energy": 8944.0
+                }
+            }
+        }
+    },
+    "Lu": {
+        "L1": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 480,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 96,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 9.92,
+                    "energy": 10870.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 370,
+                    "argon": 130
+                },
+                "gases_final": {
+                    "nitrogen": 74,
+                    "argon": 26
+                },
+                "parameters": {
+                    "absorption": 31.35,
+                    "energy": 10870.0
+                }
+            }
+        },
+        "L2": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 485,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 97,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 10.07,
+                    "energy": 10349.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 390,
+                    "argon": 110
+                },
+                "gases_final": {
+                    "nitrogen": 78,
+                    "argon": 22
+                },
+                "parameters": {
+                    "absorption": 31.32,
+                    "energy": 10349.0
+                }
+            }
+        },
+        "L3": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 495,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 99,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 10.26,
+                    "energy": 9244.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 425,
+                    "argon": 75
+                },
+                "gases_final": {
+                    "nitrogen": 85,
+                    "argon": 15
+                },
+                "parameters": {
+                    "absorption": 31.7,
+                    "energy": 9244.0
+                }
+            }
+        }
+    },
+    "Hf": {
+        "L1": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 470,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 94,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 10.99,
+                    "energy": 11271.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 350,
+                    "argon": 150
+                },
+                "gases_final": {
+                    "nitrogen": 70,
+                    "argon": 30
+                },
+                "parameters": {
+                    "absorption": 31.87,
+                    "energy": 11271.0
+                }
+            }
+        },
+        "L2": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 480,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 96,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 10.25,
+                    "energy": 10739.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 375,
+                    "argon": 125
+                },
+                "gases_final": {
+                    "nitrogen": 75,
+                    "argon": 25
+                },
+                "parameters": {
+                    "absorption": 31.38,
+                    "energy": 10739.0
+                }
+            }
+        },
+        "L3": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 490,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 98,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 10.93,
+                    "energy": 9561.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 415,
+                    "argon": 85
+                },
+                "gases_final": {
+                    "nitrogen": 83,
+                    "argon": 17
+                },
+                "parameters": {
+                    "absorption": 31.74,
+                    "energy": 9561.0
+                }
+            }
+        }
+    },
+    "Ta": {
+        "L1": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 465,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 93,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 10.87,
+                    "energy": 11682.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 335,
+                    "argon": 165
+                },
+                "gases_final": {
+                    "nitrogen": 67,
+                    "argon": 33
+                },
+                "parameters": {
+                    "absorption": 31.39,
+                    "energy": 11682.0
+                }
+            }
+        },
+        "L2": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 475,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 95,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 10.32,
+                    "energy": 11136.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 360,
+                    "argon": 140
+                },
+                "gases_final": {
+                    "nitrogen": 72,
+                    "argon": 28
+                },
+                "parameters": {
+                    "absorption": 31.21,
+                    "energy": 11136.0
+                }
+            }
+        },
+        "L3": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 490,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 98,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 9.98,
+                    "energy": 9881.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 405,
+                    "argon": 95
+                },
+                "gases_final": {
+                    "nitrogen": 81,
+                    "argon": 19
+                },
+                "parameters": {
+                    "absorption": 31.62,
+                    "energy": 9881.0
+                }
+            }
+        }
+    },
+    "W": {
+        "L1": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 460,
+                    "argon": 40
+                },
+                "gases_final": {
+                    "nitrogen": 92,
+                    "argon": 8
+                },
+                "parameters": {
+                    "absorption": 10.71,
+                    "energy": 12100.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 315,
+                    "argon": 185
+                },
+                "gases_final": {
+                    "nitrogen": 63,
+                    "argon": 37
+                },
+                "parameters": {
+                    "absorption": 31.42,
+                    "energy": 12100.0
+                }
+            }
+        },
+        "L2": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 470,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 94,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 10.3,
+                    "energy": 11544.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 340,
+                    "argon": 160
+                },
+                "gases_final": {
+                    "nitrogen": 68,
+                    "argon": 32
+                },
+                "parameters": {
+                    "absorption": 31.57,
+                    "energy": 11544.0
+                }
+            }
+        },
+        "L3": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 485,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 97,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 10.46,
+                    "energy": 10207.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 395,
+                    "argon": 105
+                },
+                "gases_final": {
+                    "nitrogen": 79,
+                    "argon": 21
+                },
+                "parameters": {
+                    "absorption": 31.34,
+                    "energy": 10207.0
+                }
+            }
+        }
+    },
+    "Re": {
+        "L1": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 455,
+                    "argon": 45
+                },
+                "gases_final": {
+                    "nitrogen": 91,
+                    "argon": 9
+                },
+                "parameters": {
+                    "absorption": 10.49,
+                    "energy": 12527.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 290,
+                    "argon": 210
+                },
+                "gases_final": {
+                    "nitrogen": 58,
+                    "argon": 42
+                },
+                "parameters": {
+                    "absorption": 31.81,
+                    "energy": 12527.0
+                }
+            }
+        },
+        "L2": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 465,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 93,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 10.21,
+                    "energy": 11959.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 320,
+                    "argon": 180
+                },
+                "gases_final": {
+                    "nitrogen": 64,
+                    "argon": 36
+                },
+                "parameters": {
+                    "absorption": 31.66,
+                    "energy": 11959.0
+                }
+            }
+        },
+        "L3": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 480,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 96,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 10.8,
+                    "energy": 10535.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 380,
+                    "argon": 120
+                },
+                "gases_final": {
+                    "nitrogen": 76,
+                    "argon": 24
+                },
+                "parameters": {
+                    "absorption": 31.9,
+                    "energy": 10535.0
+                }
+            }
+        }
+    },
+    "Os": {
+        "L1": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 445,
+                    "argon": 55
+                },
+                "gases_final": {
+                    "nitrogen": 89,
+                    "argon": 11
+                },
+                "parameters": {
+                    "absorption": 10.9,
+                    "energy": 12968.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 265,
+                    "argon": 235
+                },
+                "gases_final": {
+                    "nitrogen": 53,
+                    "argon": 47
+                },
+                "parameters": {
+                    "absorption": 31.89,
+                    "energy": 12968.0
+                }
+            }
+        },
+        "L2": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 455,
+                    "argon": 45
+                },
+                "gases_final": {
+                    "nitrogen": 91,
+                    "argon": 9
+                },
+                "parameters": {
+                    "absorption": 10.82,
+                    "energy": 12385.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 300,
+                    "argon": 200
+                },
+                "gases_final": {
+                    "nitrogen": 60,
+                    "argon": 40
+                },
+                "parameters": {
+                    "absorption": 31.51,
+                    "energy": 12385.0
+                }
+            }
+        },
+        "L3": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 480,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 96,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 9.91,
+                    "energy": 10871.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 370,
+                    "argon": 130
+                },
+                "gases_final": {
+                    "nitrogen": 74,
+                    "argon": 26
+                },
+                "parameters": {
+                    "absorption": 31.34,
+                    "energy": 10871.0
+                }
+            }
+        }
+    },
+    "Ir": {
+        "L1": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 440,
+                    "argon": 60
+                },
+                "gases_final": {
+                    "nitrogen": 88,
+                    "argon": 12
+                },
+                "parameters": {
+                    "absorption": 10.55,
+                    "energy": 13419.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 240,
+                    "argon": 260
+                },
+                "gases_final": {
+                    "nitrogen": 48,
+                    "argon": 52
+                },
+                "parameters": {
+                    "absorption": 31.75,
+                    "energy": 13419.0
+                }
+            }
+        },
+        "L2": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 450,
+                    "argon": 50
+                },
+                "gases_final": {
+                    "nitrogen": 90,
+                    "argon": 10
+                },
+                "parameters": {
+                    "absorption": 10.54,
+                    "energy": 12824.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 275,
+                    "argon": 225
+                },
+                "gases_final": {
+                    "nitrogen": 55,
+                    "argon": 45
+                },
+                "parameters": {
+                    "absorption": 31.69,
+                    "energy": 12824.0
+                }
+            }
+        },
+        "L3": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 475,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 95,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 10.13,
+                    "energy": 11215.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 355,
+                    "argon": 145
+                },
+                "gases_final": {
+                    "nitrogen": 71,
+                    "argon": 29
+                },
+                "parameters": {
+                    "absorption": 31.48,
+                    "energy": 11215.0
+                }
+            }
+        }
+    },
+    "Pt": {
+        "L1": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 430,
+                    "argon": 70
+                },
+                "gases_final": {
+                    "nitrogen": 86,
+                    "argon": 14
+                },
+                "parameters": {
+                    "absorption": 10.73,
+                    "energy": 13880.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 210,
+                    "argon": 290
+                },
+                "gases_final": {
+                    "nitrogen": 42,
+                    "argon": 58
+                },
+                "parameters": {
+                    "absorption": 31.86,
+                    "energy": 13880.0
+                }
+            }
+        },
+        "L2": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 440,
+                    "argon": 60
+                },
+                "gases_final": {
+                    "nitrogen": 88,
+                    "argon": 12
+                },
+                "parameters": {
+                    "absorption": 10.86,
+                    "energy": 13273.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 250,
+                    "argon": 250
+                },
+                "gases_final": {
+                    "nitrogen": 50,
+                    "argon": 50
+                },
+                "parameters": {
+                    "absorption": 31.63,
+                    "energy": 13273.0
+                }
+            }
+        },
+        "L3": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 470,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 94,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 10.25,
+                    "energy": 11564.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 340,
+                    "argon": 160
+                },
+                "gases_final": {
+                    "nitrogen": 68,
+                    "argon": 32
+                },
+                "parameters": {
+                    "absorption": 31.44,
+                    "energy": 11564.0
+                }
+            }
+        }
+    },
+    "Au": {
+        "L1": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 420,
+                    "argon": 80
+                },
+                "gases_final": {
+                    "nitrogen": 84,
+                    "argon": 16
+                },
+                "parameters": {
+                    "absorption": 10.81,
+                    "energy": 14353.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 180,
+                    "argon": 320
+                },
+                "gases_final": {
+                    "nitrogen": 36,
+                    "argon": 64
+                },
+                "parameters": {
+                    "absorption": 31.74,
+                    "energy": 14353.0
+                }
+            }
+        },
+        "L2": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 435,
+                    "argon": 65
+                },
+                "gases_final": {
+                    "nitrogen": 87,
+                    "argon": 13
+                },
+                "parameters": {
+                    "absorption": 10.48,
+                    "energy": 13734.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 220,
+                    "argon": 280
+                },
+                "gases_final": {
+                    "nitrogen": 44,
+                    "argon": 56
+                },
+                "parameters": {
+                    "absorption": 31.8,
+                    "energy": 13734.0
+                }
+            }
+        },
+        "L3": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 465,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 93,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 10.3,
+                    "energy": 11919.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 320,
+                    "argon": 180
+                },
+                "gases_final": {
+                    "nitrogen": 64,
+                    "argon": 36
+                },
+                "parameters": {
+                    "absorption": 31.9,
+                    "energy": 11919.0
+                }
+            }
+        }
+    },
+    "Hg": {
+        "L1": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 410,
+                    "argon": 90
+                },
+                "gases_final": {
+                    "nitrogen": 82,
+                    "argon": 18
+                },
+                "parameters": {
+                    "absorption": 10.79,
+                    "energy": 14839.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 145,
+                    "argon": 355
+                },
+                "gases_final": {
+                    "nitrogen": 29,
+                    "argon": 71
+                },
+                "parameters": {
+                    "absorption": 31.78,
+                    "energy": 14839.0
+                }
+            }
+        },
+        "L2": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 425,
+                    "argon": 75
+                },
+                "gases_final": {
+                    "nitrogen": 85,
+                    "argon": 15
+                },
+                "parameters": {
+                    "absorption": 10.59,
+                    "energy": 14209.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 190,
+                    "argon": 310
+                },
+                "gases_final": {
+                    "nitrogen": 38,
+                    "argon": 62
+                },
+                "parameters": {
+                    "absorption": 31.72,
+                    "energy": 14209.0
+                }
+            }
+        },
+        "L3": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 460,
+                    "argon": 40
+                },
+                "gases_final": {
+                    "nitrogen": 92,
+                    "argon": 8
+                },
+                "parameters": {
+                    "absorption": 10.28,
+                    "energy": 12284.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 305,
+                    "argon": 195
+                },
+                "gases_final": {
+                    "nitrogen": 61,
+                    "argon": 39
+                },
+                "parameters": {
+                    "absorption": 31.53,
+                    "energy": 12284.0
+                }
+            }
+        }
+    },
+    "Tl": {
+        "L1": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 400,
+                    "argon": 100
+                },
+                "gases_final": {
+                    "nitrogen": 80,
+                    "argon": 20
+                },
+                "parameters": {
+                    "absorption": 10.68,
+                    "energy": 15347.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 105,
+                    "argon": 395
+                },
+                "gases_final": {
+                    "nitrogen": 21,
+                    "argon": 79
+                },
+                "parameters": {
+                    "absorption": 31.88,
+                    "energy": 15347.0
+                }
+            }
+        },
+        "L2": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 415,
+                    "argon": 85
+                },
+                "gases_final": {
+                    "nitrogen": 83,
+                    "argon": 17
+                },
+                "parameters": {
+                    "absorption": 10.6,
+                    "energy": 14698.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 155,
+                    "argon": 345
+                },
+                "gases_final": {
+                    "nitrogen": 31,
+                    "argon": 69
+                },
+                "parameters": {
+                    "absorption": 31.8,
+                    "energy": 14698.0
+                }
+            }
+        },
+        "L3": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 450,
+                    "argon": 50
+                },
+                "gases_final": {
+                    "nitrogen": 90,
+                    "argon": 10
+                },
+                "parameters": {
+                    "absorption": 10.92,
+                    "energy": 12658.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 285,
+                    "argon": 215
+                },
+                "gases_final": {
+                    "nitrogen": 57,
+                    "argon": 43
+                },
+                "parameters": {
+                    "absorption": 31.59,
+                    "energy": 12658.0
+                }
+            }
+        }
+    },
+    "Pb": {
+        "L1": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 385,
+                    "argon": 115
+                },
+                "gases_final": {
+                    "nitrogen": 77,
+                    "argon": 23
+                },
+                "parameters": {
+                    "absorption": 10.9,
+                    "energy": 15861.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 65,
+                    "argon": 435
+                },
+                "gases_final": {
+                    "nitrogen": 13,
+                    "argon": 87
+                },
+                "parameters": {
+                    "absorption": 31.78,
+                    "energy": 15861.0
+                }
+            }
+        },
+        "L2": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 400,
+                    "argon": 100
+                },
+                "gases_final": {
+                    "nitrogen": 80,
+                    "argon": 20
+                },
+                "parameters": {
+                    "absorption": 10.96,
+                    "energy": 15200.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 115,
+                    "argon": 385
+                },
+                "gases_final": {
+                    "nitrogen": 23,
+                    "argon": 77
+                },
+                "parameters": {
+                    "absorption": 31.97,
+                    "energy": 15200.0
+                }
+            }
+        },
+        "L3": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 445,
+                    "argon": 55
+                },
+                "gases_final": {
+                    "nitrogen": 89,
+                    "argon": 11
+                },
+                "parameters": {
+                    "absorption": 10.75,
+                    "energy": 13035.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 265,
+                    "argon": 235
+                },
+                "gases_final": {
+                    "nitrogen": 53,
+                    "argon": 47
+                },
+                "parameters": {
+                    "absorption": 31.51,
+                    "energy": 13035.0
+                }
+            }
+        }
+    },
+    "Bi": {
+        "L1": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 370,
+                    "argon": 130
+                },
+                "gases_final": {
+                    "nitrogen": 74,
+                    "argon": 26
+                },
+                "parameters": {
+                    "absorption": 11.0,
+                    "energy": 16388.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 50,
+                    "argon": 450
+                },
+                "gases_final": {
+                    "nitrogen": 10,
+                    "argon": 90
+                },
+                "parameters": {
+                    "absorption": 30.19,
+                    "energy": 16388.0
+                }
+            }
+        },
+        "L2": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 390,
+                    "argon": 110
+                },
+                "gases_final": {
+                    "nitrogen": 78,
+                    "argon": 22
+                },
+                "parameters": {
+                    "absorption": 10.8,
+                    "energy": 15711.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 75,
+                    "argon": 425
+                },
+                "gases_final": {
+                    "nitrogen": 15,
+                    "argon": 85
+                },
+                "parameters": {
+                    "absorption": 31.92,
+                    "energy": 15711.0
+                }
+            }
+        },
+        "L3": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 440,
+                    "argon": 60
+                },
+                "gases_final": {
+                    "nitrogen": 88,
+                    "argon": 12
+                },
+                "parameters": {
+                    "absorption": 10.55,
+                    "energy": 13419.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 240,
+                    "argon": 260
+                },
+                "gases_final": {
+                    "nitrogen": 48,
+                    "argon": 52
+                },
+                "parameters": {
+                    "absorption": 31.75,
+                    "energy": 13419.0
+                }
+            }
+        }
+    },
+    "Po": {
+        "L1": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 355,
+                    "argon": 145
+                },
+                "gases_final": {
+                    "nitrogen": 71,
+                    "argon": 29
+                },
+                "parameters": {
+                    "absorption": 10.99,
+                    "energy": 16939.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 50,
+                    "argon": 450
+                },
+                "gases_final": {
+                    "nitrogen": 10,
+                    "argon": 90
+                },
+                "parameters": {
+                    "absorption": 27.87,
+                    "energy": 16939.0
+                }
+            }
+        },
+        "L2": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 375,
+                    "argon": 125
+                },
+                "gases_final": {
+                    "nitrogen": 75,
+                    "argon": 25
+                },
+                "parameters": {
+                    "absorption": 10.92,
+                    "energy": 16244.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 50,
+                    "argon": 450
+                },
+                "gases_final": {
+                    "nitrogen": 10,
+                    "argon": 90
+                },
+                "parameters": {
+                    "absorption": 30.84,
+                    "energy": 16244.0
+                }
+            }
+        },
+        "L3": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 430,
+                    "argon": 70
+                },
+                "gases_final": {
+                    "nitrogen": 86,
+                    "argon": 14
+                },
+                "parameters": {
+                    "absorption": 10.87,
+                    "energy": 13814.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 215,
+                    "argon": 285
+                },
+                "gases_final": {
+                    "nitrogen": 43,
+                    "argon": 57
+                },
+                "parameters": {
+                    "absorption": 31.8,
+                    "energy": 13814.0
+                }
+            }
+        }
+    },
+    "At": {
+        "L1": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 340,
+                    "argon": 160
+                },
+                "gases_final": {
+                    "nitrogen": 68,
+                    "argon": 32
+                },
+                "parameters": {
+                    "absorption": 10.92,
+                    "energy": 17493.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 50,
+                    "argon": 450
+                },
+                "gases_final": {
+                    "nitrogen": 10,
+                    "argon": 90
+                },
+                "parameters": {
+                    "absorption": 25.74,
+                    "energy": 17493.0
+                }
+            }
+        },
+        "L2": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 360,
+                    "argon": 140
+                },
+                "gases_final": {
+                    "nitrogen": 72,
+                    "argon": 28
+                },
+                "parameters": {
+                    "absorption": 10.95,
+                    "energy": 16785.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 50,
+                    "argon": 450
+                },
+                "gases_final": {
+                    "nitrogen": 10,
+                    "argon": 90
+                },
+                "parameters": {
+                    "absorption": 28.49,
+                    "energy": 16785.0
+                }
+            }
+        },
+        "L3": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 425,
+                    "argon": 75
+                },
+                "gases_final": {
+                    "nitrogen": 85,
+                    "argon": 15
+                },
+                "parameters": {
+                    "absorption": 10.58,
+                    "energy": 14214.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 190,
+                    "argon": 310
+                },
+                "gases_final": {
+                    "nitrogen": 38,
+                    "argon": 62
+                },
+                "parameters": {
+                    "absorption": 31.7,
+                    "energy": 14214.0
+                }
+            }
+        }
+    },
+    "Rn": {
+        "L1": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 325,
+                    "argon": 175
+                },
+                "gases_final": {
+                    "nitrogen": 65,
+                    "argon": 35
+                },
+                "parameters": {
+                    "absorption": 10.81,
+                    "energy": 18049.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 50,
+                    "argon": 450
+                },
+                "gases_final": {
+                    "nitrogen": 10,
+                    "argon": 90
+                },
+                "parameters": {
+                    "absorption": 23.81,
+                    "energy": 18049.0
+                }
+            }
+        },
+        "L2": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 345,
+                    "argon": 155
+                },
+                "gases_final": {
+                    "nitrogen": 69,
+                    "argon": 31
+                },
+                "parameters": {
+                    "absorption": 10.9,
+                    "energy": 17337.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 50,
+                    "argon": 450
+                },
+                "gases_final": {
+                    "nitrogen": 10,
+                    "argon": 90
+                },
+                "parameters": {
+                    "absorption": 26.32,
+                    "energy": 17337.0
+                }
+            }
+        },
+        "L3": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 415,
+                    "argon": 85
+                },
+                "gases_final": {
+                    "nitrogen": 83,
+                    "argon": 17
+                },
+                "parameters": {
+                    "absorption": 10.76,
+                    "energy": 14619.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 160,
+                    "argon": 340
+                },
+                "gases_final": {
+                    "nitrogen": 32,
+                    "argon": 68
+                },
+                "parameters": {
+                    "absorption": 31.84,
+                    "energy": 14619.0
+                }
+            }
+        }
+    },
+    "Fr": {
+        "L1": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 305,
+                    "argon": 195
+                },
+                "gases_final": {
+                    "nitrogen": 61,
+                    "argon": 39
+                },
+                "parameters": {
+                    "absorption": 10.84,
+                    "energy": 18639.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 50,
+                    "argon": 450
+                },
+                "gases_final": {
+                    "nitrogen": 10,
+                    "argon": 90
+                },
+                "parameters": {
+                    "absorption": 21.94,
+                    "energy": 18639.0
+                }
+            }
+        },
+        "L2": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 330,
+                    "argon": 170
+                },
+                "gases_final": {
+                    "nitrogen": 66,
+                    "argon": 34
+                },
+                "parameters": {
+                    "absorption": 10.78,
+                    "energy": 17907.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 50,
+                    "argon": 450
+                },
+                "gases_final": {
+                    "nitrogen": 10,
+                    "argon": 90
+                },
+                "parameters": {
+                    "absorption": 24.28,
+                    "energy": 17907.0
+                }
+            }
+        },
+        "L3": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 405,
+                    "argon": 95
+                },
+                "gases_final": {
+                    "nitrogen": 81,
+                    "argon": 19
+                },
+                "parameters": {
+                    "absorption": 10.86,
+                    "energy": 15031.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 130,
+                    "argon": 370
+                },
+                "gases_final": {
+                    "nitrogen": 26,
+                    "argon": 74
+                },
+                "parameters": {
+                    "absorption": 31.83,
+                    "energy": 15031.0
+                }
+            }
+        },
+        "M1": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 70,
+                    "helium": 430
+                },
+                "gases_final": {
+                    "nitrogen": 14,
+                    "helium": 86
+                },
+                "parameters": {
+                    "absorption": 9.58,
+                    "energy": 4652.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 500,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 100,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 50.78,
+                    "energy": 4652.0
+                }
+            }
+        }
+    },
+    "Ra": {
+        "L1": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 285,
+                    "argon": 215
+                },
+                "gases_final": {
+                    "nitrogen": 57,
+                    "argon": 43
+                },
+                "parameters": {
+                    "absorption": 10.81,
+                    "energy": 19237.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 50,
+                    "argon": 450
+                },
+                "gases_final": {
+                    "nitrogen": 10,
+                    "argon": 90
+                },
+                "parameters": {
+                    "absorption": 20.24,
+                    "energy": 19237.0
+                }
+            }
+        },
+        "L2": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 310,
+                    "argon": 190
+                },
+                "gases_final": {
+                    "nitrogen": 62,
+                    "argon": 38
+                },
+                "parameters": {
+                    "absorption": 10.85,
+                    "energy": 18484.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 50,
+                    "argon": 450
+                },
+                "gases_final": {
+                    "nitrogen": 10,
+                    "argon": 90
+                },
+                "parameters": {
+                    "absorption": 22.41,
+                    "energy": 18484.0
+                }
+            }
+        },
+        "L3": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 395,
+                    "argon": 105
+                },
+                "gases_final": {
+                    "nitrogen": 79,
+                    "argon": 21
+                },
+                "parameters": {
+                    "absorption": 10.9,
+                    "energy": 15444.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 100,
+                    "argon": 400
+                },
+                "gases_final": {
+                    "nitrogen": 20,
+                    "argon": 80
+                },
+                "parameters": {
+                    "absorption": 31.71,
+                    "energy": 15444.0
+                }
+            }
+        },
+        "M1": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 75,
+                    "helium": 425
+                },
+                "gases_final": {
+                    "nitrogen": 15,
+                    "helium": 85
+                },
+                "parameters": {
+                    "absorption": 9.22,
+                    "energy": 4822.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 500,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 100,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 47.06,
+                    "energy": 4822.0
+                }
+            }
+        }
+    },
+    "Ac": {
+        "L1": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 260,
+                    "argon": 240
+                },
+                "gases_final": {
+                    "nitrogen": 52,
+                    "argon": 48
+                },
+                "parameters": {
+                    "absorption": 10.92,
+                    "energy": 19840.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 50,
+                    "argon": 450
+                },
+                "gases_final": {
+                    "nitrogen": 10,
+                    "argon": 90
+                },
+                "parameters": {
+                    "absorption": 18.68,
+                    "energy": 19840.0
+                }
+            }
+        },
+        "L2": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 290,
+                    "argon": 210
+                },
+                "gases_final": {
+                    "nitrogen": 58,
+                    "argon": 42
+                },
+                "parameters": {
+                    "absorption": 10.83,
+                    "energy": 19083.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 50,
+                    "argon": 450
+                },
+                "gases_final": {
+                    "nitrogen": 10,
+                    "argon": 90
+                },
+                "parameters": {
+                    "absorption": 20.66,
+                    "energy": 19083.0
+                }
+            }
+        },
+        "L3": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 385,
+                    "argon": 115
+                },
+                "gases_final": {
+                    "nitrogen": 77,
+                    "argon": 23
+                },
+                "parameters": {
+                    "absorption": 10.88,
+                    "energy": 15871.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 65,
+                    "argon": 435
+                },
+                "gases_final": {
+                    "nitrogen": 13,
+                    "argon": 87
+                },
+                "parameters": {
+                    "absorption": 31.73,
+                    "energy": 15871.0
+                }
+            }
+        },
+        "M1": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 85,
+                    "helium": 415
+                },
+                "gases_final": {
+                    "nitrogen": 17,
+                    "helium": 83
+                },
+                "parameters": {
+                    "absorption": 9.34,
+                    "energy": 5002.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 500,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 100,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 43.4,
+                    "energy": 5002.0
+                }
+            }
+        },
+        "M2": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 70,
+                    "helium": 430
+                },
+                "gases_final": {
+                    "nitrogen": 14,
+                    "helium": 86
+                },
+                "parameters": {
+                    "absorption": 9.56,
+                    "energy": 4656.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 500,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 100,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 50.69,
+                    "energy": 4656.0
+                }
+            }
+        }
+    },
+    "Th": {
+        "L1": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 235,
+                    "argon": 265
+                },
+                "gases_final": {
+                    "nitrogen": 47,
+                    "argon": 53
+                },
+                "parameters": {
+                    "absorption": 10.92,
+                    "energy": 20472.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 50,
+                    "argon": 450
+                },
+                "gases_final": {
+                    "nitrogen": 10,
+                    "argon": 90
+                },
+                "parameters": {
+                    "absorption": 17.21,
+                    "energy": 20472.0
+                }
+            }
+        },
+        "L2": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 265,
+                    "argon": 235
+                },
+                "gases_final": {
+                    "nitrogen": 53,
+                    "argon": 47
+                },
+                "parameters": {
+                    "absorption": 10.94,
+                    "energy": 19693.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 50,
+                    "argon": 450
+                },
+                "gases_final": {
+                    "nitrogen": 10,
+                    "argon": 90
+                },
+                "parameters": {
+                    "absorption": 19.04,
+                    "energy": 19693.0
+                }
+            }
+        },
+        "L3": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 375,
+                    "argon": 125
+                },
+                "gases_final": {
+                    "nitrogen": 75,
+                    "argon": 25
+                },
+                "parameters": {
+                    "absorption": 10.82,
+                    "energy": 16300.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 50,
+                    "argon": 450
+                },
+                "gases_final": {
+                    "nitrogen": 10,
+                    "argon": 90
+                },
+                "parameters": {
+                    "absorption": 30.58,
+                    "energy": 16300.0
+                }
+            }
+        },
+        "M1": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 95,
+                    "helium": 405
+                },
+                "gases_final": {
+                    "nitrogen": 19,
+                    "helium": 81
+                },
+                "parameters": {
+                    "absorption": 9.36,
+                    "energy": 5182.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 500,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 100,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 40.03,
+                    "energy": 5182.0
+                }
+            }
+        },
+        "M2": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 75,
+                    "helium": 425
+                },
+                "gases_final": {
+                    "nitrogen": 15,
+                    "helium": 85
+                },
+                "parameters": {
+                    "absorption": 9.18,
+                    "energy": 4830.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 500,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 100,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 46.89,
+                    "energy": 4830.0
+                }
+            }
+        }
+    },
+    "Pa": {
+        "L1": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 210,
+                    "argon": 290
+                },
+                "gases_final": {
+                    "nitrogen": 42,
+                    "argon": 58
+                },
+                "parameters": {
+                    "absorption": 10.86,
+                    "energy": 21105.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 50,
+                    "argon": 450
+                },
+                "gases_final": {
+                    "nitrogen": 10,
+                    "argon": 90
+                },
+                "parameters": {
+                    "absorption": 15.88,
+                    "energy": 21105.0
+                }
+            }
+        },
+        "L2": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 240,
+                    "argon": 260
+                },
+                "gases_final": {
+                    "nitrogen": 48,
+                    "argon": 52
+                },
+                "parameters": {
+                    "absorption": 10.97,
+                    "energy": 20314.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 50,
+                    "argon": 450
+                },
+                "gases_final": {
+                    "nitrogen": 10,
+                    "argon": 90
+                },
+                "parameters": {
+                    "absorption": 17.56,
+                    "energy": 20314.0
+                }
+            }
+        },
+        "L3": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 365,
+                    "argon": 135
+                },
+                "gases_final": {
+                    "nitrogen": 73,
+                    "argon": 27
+                },
+                "parameters": {
+                    "absorption": 10.72,
+                    "energy": 16733.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 50,
+                    "argon": 450
+                },
+                "gases_final": {
+                    "nitrogen": 10,
+                    "argon": 90
+                },
+                "parameters": {
+                    "absorption": 28.71,
+                    "energy": 16733.0
+                }
+            }
+        },
+        "M1": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 105,
+                    "helium": 395
+                },
+                "gases_final": {
+                    "nitrogen": 21,
+                    "helium": 79
+                },
+                "parameters": {
+                    "absorption": 9.3,
+                    "energy": 5367.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 500,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 100,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 36.86,
+                    "energy": 5367.0
+                }
+            }
+        },
+        "M2": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 85,
+                    "helium": 415
+                },
+                "gases_final": {
+                    "nitrogen": 17,
+                    "helium": 83
+                },
+                "parameters": {
+                    "absorption": 9.34,
+                    "energy": 5001.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 500,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 100,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 43.42,
+                    "energy": 5001.0
+                }
+            }
+        }
+    },
+    "U": {
+        "L1": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 180,
+                    "argon": 320
+                },
+                "gases_final": {
+                    "nitrogen": 36,
+                    "argon": 64
+                },
+                "parameters": {
+                    "absorption": 10.9,
+                    "energy": 21757.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 50,
+                    "argon": 450
+                },
+                "gases_final": {
+                    "nitrogen": 10,
+                    "argon": 90
+                },
+                "parameters": {
+                    "absorption": 14.65,
+                    "energy": 21757.0
+                }
+            }
+        },
+        "L2": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 215,
+                    "argon": 285
+                },
+                "gases_final": {
+                    "nitrogen": 43,
+                    "argon": 57
+                },
+                "parameters": {
+                    "absorption": 10.92,
+                    "energy": 20948.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 50,
+                    "argon": 450
+                },
+                "gases_final": {
+                    "nitrogen": 10,
+                    "argon": 90
+                },
+                "parameters": {
+                    "absorption": 16.2,
+                    "energy": 20948.0
+                }
+            }
+        },
+        "L3": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 350,
+                    "argon": 150
+                },
+                "gases_final": {
+                    "nitrogen": 70,
+                    "argon": 30
+                },
+                "parameters": {
+                    "absorption": 10.9,
+                    "energy": 17166.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 50,
+                    "argon": 450
+                },
+                "gases_final": {
+                    "nitrogen": 10,
+                    "argon": 90
+                },
+                "parameters": {
+                    "absorption": 26.97,
+                    "energy": 17166.0
+                }
+            }
+        },
+        "M1": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 115,
+                    "helium": 385
+                },
+                "gases_final": {
+                    "nitrogen": 23,
+                    "helium": 77
+                },
+                "parameters": {
+                    "absorption": 9.21,
+                    "energy": 5548.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 500,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 100,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 34.02,
+                    "energy": 5548.0
+                }
+            }
+        },
+        "M2": {
+            "i0": {
+                "gases_initial": {
+                    "nitrogen": 95,
+                    "helium": 405
+                },
+                "gases_final": {
+                    "nitrogen": 19,
+                    "helium": 81
+                },
+                "parameters": {
+                    "absorption": 9.36,
+                    "energy": 5182.0
+                }
+            },
+            "it": {
+                "gases_initial": {
+                    "nitrogen": 500,
+                    "argon": 0
+                },
+                "gases_final": {
+                    "nitrogen": 100,
+                    "argon": 0
+                },
+                "parameters": {
+                    "absorption": 40.03,
+                    "energy": 5182.0
+                }
+            }
+        }
+    }
+}
