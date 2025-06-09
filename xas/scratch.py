@@ -1968,3 +1968,91 @@ def interpolate_with_interp(dataset, key_base = None, sort=True):
         return intepolated_dataframe.sort_values('energy')
     else:
         return intepolated_dataframe
+
+
+
+
+from ophyd.status import DeviceStatus
+import threading
+class WPS_Scan(Device):
+    setpoint = Cpt(EpicsSignal, '-Set')
+    readback = Cpt(EpicsSignalRO, '-Sense', name='wps_i0_plate')
+
+    def __init__(self, prefix, WPS_scan_id=None, **kwargs):
+        super().__init__(prefix, **kwargs)
+        self.WPS_scan_id = WPS_scan_id
+
+        if self.WPS_scan_id is None:
+            self.WPS_scan_id = 'WPS_scan'
+
+    def set(self, value):
+        status = DeviceStatus(self)
+
+        def _move():
+            self.setpoint.put(value, wait=True)
+            time.sleep(2)
+            status.set_finished()
+
+        threading.Thread(target=_move, daemon=True).start()
+        return status
+
+    def read(self):
+        return {self.WPS_scan_id: {'value':self.readback.get(), 'timestamp': time.time()}}
+
+    def describe(self):
+        return {self.WPS_scan_id: {'source': 'PV-Sense', 'dtype': 'number', 'shape': []}}
+
+    def stop(self, *, success=False):
+        self.setpoint.stop()
+
+    def is_moving(self):
+        return False
+
+    def read_configuration(self):
+        return {}
+
+    def describe_configuration(self):
+        return {}
+
+
+wps_i0 = WPS_Scan('XF:07BMB-OP{WPS:01-HV:u300}V', name='wps_i0', WPS_scan_id='WPS_scan_i0')
+
+
+voltages = np.arange(1600, 1690, 1)
+
+dictionary = {'gases': {'N2':100, 'Ar':0}, 'absorption':5}
+
+N2 = np.arange(95, 101, 1)*5
+Ar = np.arange(5, 0, -1)*5
+absorptions = [10, 9, 8, 7, 6, 5]
+
+
+def voltage_plataue():
+    N2 = np.arange(95, 101, 1) * 5
+    Ar = np.arange(5, -1, -1) * 5
+    absorptions = [10, 9, 8, 7, 6, 5]
+    voltages = np.arange(1670, 1675, 1)
+    uids = []
+    for n2, ar, absorp in zip(N2, Ar, absorptions):
+        mfc.ch2_n2_sp.put(n2)
+        mfc.ch3_ar_sp.put(ar)
+        yield from sleep(5)
+        dictionary = {'gases': {'N2': n2, 'Ar': ar}, 'absorption': absorp}
+        uid = yield from bp.list_scan([apb_ave], wps_i0, voltages.tolist(), md=dictionary)
+        uids.append(uid)
+    return uids
+
+
+
+def create_txt_files(uids=None, path=None, filename=None):
+    for uid in uids:
+        hdr = db[uid]
+        t = hdr.table()
+        volt = t['WPS_scan_i0']
+        i0 = t['apb_ave_ch1_mean']
+        nl = '\n'
+        header = f"# Gases: {hdr.start['gases']} {nl} Absorption: {hdr.start['absorption']}"
+        absorption = f"_{hdr.start['absorption']}percent.txt"
+        np.savetxt(path + filename + absorption, np.column_stack((volt, i0)), header=header)
+
+RE(bp.list_scan([apb_ave], wps_i0, *voltages.tolist(), md=dictionary))
