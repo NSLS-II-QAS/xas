@@ -1297,7 +1297,7 @@ def save_interpolated_data(uids, path=None):
         hdr = db[uid]
 
 
-        apb_df, energy_df, energy_offset = load_apb_dataset_from_db(db, db[uid]f.start['uid'])
+        apb_df, energy_df, energy_offset = load_apb_dataset_from_db(db, db[uid].start['uid'])
         raw_df = translate_apb_dataset(apb_df, energy_df, energy_offset)
 
         key_base = 'i0'
@@ -1753,8 +1753,6 @@ class Lakeshore336Channel(Device):
     V = Cpt(EpicsSignalRO, 'Val:Sens-I')
     status = Cpt(EpicsSignalRO, 'T-Sts')
 
-XF:07BM-B{LS:01-Out:1}T-SP
-XF:07BM-B{LS:01-Out:1}Val:Ramp-SP
 class Lakeshore336Setpoint(Device):
     readback = Cpt(EpicsSignalRO, 'Chan:A}T-I')
     setpoint = Cpt(EpicsSignal, 'Out:1}T-SP')
