@@ -16,12 +16,21 @@ def load_apb_dataset_from_db(db, uid):
 
     # apb_dataset = list(hdr.data(stream_name='apb_stream', field='apb_stream'))[0]
     energy_dataset =  list(hdr.data(stream_name='pb1_enc1',field='pb1_enc1'))[0]
+    if not isinstance(energy_dataset, pd.DataFrame):
+        energy_dataset = pd.DataFrame(energy_dataset)
+    else:
+        pass
     angle_offset = -float(hdr['start']['angle_offset'])
     # ch_offset_keys = [key for key in hdr.start.keys() if key.startswith('ch') and key.endswith('_offset')]
     # ch_offsets = np.array([hdr.start[key] for key in ch_offset_keys])
 
     ch_offsets = get_ch_properties(hdr.start, 'ch', '_offset')*1e3 #offsets are ib mV but the readings are in uV
     ch_gains = get_ch_properties(hdr.start, 'ch', '_amp_gain')
+
+    if not isinstance(apb_dataset, pd.DataFrame):
+        apb_dataset = pd.DataFrame(apb_dataset)
+    else:
+        pass
 
     apb_dataset.iloc[:, 1:] -= ch_offsets
     apb_dataset.iloc[:, 1:] /= 1e6
@@ -94,6 +103,24 @@ def load_xs3_dataset_from_db(db, uid, apb_trig_timestamps):
     return spectra
 
 
+def load_xs3x_dataset_from_db(db, uid, apb_trig_timestamps):
+    hdr = db[uid]
+    t = hdr.table(stream_name='xsx_stream', fill=True) #['xs_stream']
+    n_spectra = t.size
+    xs_timestamps = apb_trig_timestamps[:n_spectra]
+    chan_roi_names = [f'CHAN{c}ROI{r}' for c, r in product([1, 2, 3, 4, 6], [1, 2, 3, 4])]
+    spectra = {}
+
+    for j, chan_roi in enumerate(chan_roi_names):
+        this_spectrum = np.zeros(n_spectra)
+
+        for i in range(n_spectra):
+            this_spectrum[i] = t[i+1][chan_roi]
+
+        spectra[chan_roi] = pd.DataFrame(np.vstack((xs_timestamps, this_spectrum)).T, columns=['timestamp', chan_roi])
+
+    return spectra
+
 
 def load_xs3_dataset_from_db_new(db, uid, apb_trig_timestamps):
     hdr = db[uid]
@@ -149,6 +176,8 @@ def load_pil100k_dataset_from_db(db, uid, apb_trig_timestamps, input_type='hdf5'
 
 
 
+def load_general_scan_dataset_from_db(db, uid):
+    hdr = db[uid]
 
 
 

@@ -13,6 +13,18 @@ from .xs3 import load_data_with_xs3
 from datetime import datetime
 
 
+def clean_dict(raw_dict):
+    clean_raw_dict = {}
+    for key in raw_dict.keys():
+        df = raw_dict[key]
+        zero_idx = df[df['timestamp'] == 0].index.min()
+        if zero_idx is None:
+            clean_raw_dict[key] = df
+        else:
+            clean_raw_dict[key] = df.loc[:zero_idx - 1]
+    return clean_raw_dict
+
+
 def average_roi_channels(dataframe=None):
     if dataframe is not None:
         # col1 = dataframe.columns.tolist()[:-1]
@@ -49,6 +61,15 @@ def process_interpolate_bin_from_uid(uid, db, e0=None):
             raw_df = translate_apb_dataset(apb_df, energy_df, energy_offset)
             key_base = 'i0'
         elif experiment == 'fly_energy_scan_xs3':
+            apb_df, energy_df, energy_offset = load_apb_dataset_from_db(db, uid)
+            raw_df = translate_apb_dataset(apb_df, energy_df, energy_offset)
+
+            apb_trig_timestamps = load_apb_trig_dataset_from_db(db, uid)
+            xs3_dict = load_xs3_dataset_from_db(db, uid, apb_trig_timestamps)
+
+            raw_df = {**raw_df, **xs3_dict}
+            key_base = 'CHAN1ROI1'
+        elif experiment == 'fly_energy_scan_xs3x':
             apb_df, energy_df, energy_offset = load_apb_dataset_from_db(db, uid)
             raw_df = translate_apb_dataset(apb_df, energy_df, energy_offset)
 
