@@ -104,20 +104,45 @@ def load_xs3_dataset_from_db(db, uid, apb_trig_timestamps):
 
 
 def load_xs3x_dataset_from_db(db, uid, apb_trig_timestamps):
+    print("NOW load_xs3x_dataset_from_db")
     hdr = db[uid]
-    t = hdr.table(stream_name='xsx_stream', fill=True) #['xs_stream']
-    n_spectra = t.size
+    t = np.stack(hdr.table(stream_name='xsx_stream', fill=True)['xsx_stream'].to_numpy())
+    roi_stream = hdr.table(stream_name='baseline')
+
+    #['xsx_stream_channel02_mcaroi01_size_x'][1]
+    n_spectra = t.shape[0]
     xs_timestamps = apb_trig_timestamps[:n_spectra]
-    chan_roi_names = [f'CHAN{c}ROI{r}' for c, r in product([1, 2, 3, 4, 6], [1, 2, 3, 4])]
+
+    chan_roi_limits_mins = [f'xsx_stream_channel{c:02d}_mcaroi{r:02d}_min_x' for c, r in product([1, 3, 4, 5, 6, 7, 8], [1, 2, 3, 4])]
+    chan_roi_limits_sizes = [f'xsx_stream_channel{c:02d}_mcaroi{r:02d}_size_x' for c, r in product([1, 3, 4, 5, 6, 7, 8], [1, 2, 3, 4])]
+    chan_roi_names = [f'CHAN{c}ROI{r}' for c, r in product([1, 3, 4, 5, 6, 7, 8], [1, 2, 3, 4])]
     spectra = {}
 
-    for j, chan_roi in enumerate(chan_roi_names):
-        this_spectrum = np.zeros(n_spectra)
+    for chn in [1, 3, 4, 5, 6, 7, 8]:
+        for roin in [1, 2, 3 ,4]:
+            r_min = roi_stream[f'xsx_stream_channel{chn:02d}_mcaroi{roin:02d}_min_x'][1]
+            r_size = roi_stream[f'xsx_stream_channel{chn:02d}_mcaroi{roin:02d}_size_x'][1]
+            if r_size == 0:
+                r_size = 1
+            # t_slice = t[:, chn-1, r_min:r_min+r_size]
+            # print(t_slice.shape)
+            r_spectrum = np.sum(t[:, chn-1, r_min:r_min+r_size], axis=1)
+            roi_name = f'CHAN{chn}ROI{roin}'
+            spectra[roi_name] = pd.DataFrame(np.vstack((xs_timestamps, r_spectrum)).T, columns=['timestamp', roi_name])
 
-        for i in range(n_spectra):
-            this_spectrum[i] = t[i+1][chan_roi]
+    # for chn in [1, 3, 4, 5, 6, 7, 8]:
+    #     spectra[f'channel_{chn}'] = pd.DataFrame({'timestamp': xs_timestamps,
+    #                                               f'channel_{chn}' : [row.tolist() for row in t[:, chn-1, :]]})
+                                                 #  [t[:, chn-1, :]]),
+                                                 # columns=['timestamp', f'channel_{chn}'])
 
-        spectra[chan_roi] = pd.DataFrame(np.vstack((xs_timestamps, this_spectrum)).T, columns=['timestamp', chan_roi])
+    # for j, chan_roi in enumerate(chan_roi_names):
+    #     this_spectrum = np.zeros(n_spectra)
+    #
+    #     for i in range(n_spectra):
+    #         this_spectrum[i] = t[i+1][chan_roi]
+    #
+    #     spectra[chan_roi] = pd.DataFrame(np.vstack((xs_timestamps, this_spectrum)).T, columns=['timestamp', chan_roi])
 
     return spectra
 

@@ -4,7 +4,7 @@ from .file_io import (load_dataset_from_files, create_file_header, validate_file
                       save_interpolated_df_as_file, save_binned_df_as_file, find_e0, save_binned_df_as_hdf5_file)
 
 from xas.db_io import load_apb_dataset_from_db, translate_apb_dataset, load_apb_trig_dataset_from_db, \
-    load_xs3_dataset_from_db, load_xs3_dataset_from_db_new
+    load_xs3_dataset_from_db, load_xs3_dataset_from_db_new, load_xs3x_dataset_from_db
 from .interpolate import interpolate, interpolate_with_interp
 
 from .xas_logger import get_logger
@@ -31,6 +31,21 @@ def average_roi_channels(dataframe=None):
         for j in range(1, 5):
             dat = 0
             for i in range(1, 5):
+                dat += getattr(dataframe, 'CHAN' + str(i) + 'ROI' + str(j))
+            dataframe.insert(j+4, column= 'ROI' + str(j) + 'AVG', value = dat/4)
+            # col1.append('ROI' + str(j) + 'AVG')
+        # col1.append('energy')
+        # dataframe = dataframe[col1]
+        print('Done with averaging')
+    return dataframe
+
+
+def average_roi_channels_xs3x(dataframe=None):
+    if dataframe is not None:
+        # col1 = dataframe.columns.tolist()[:-1]
+        for j in range(1, 5):
+            dat = 0
+            for i in [1, 3, 4, 5, 6, 7, 8]:
                 dat += getattr(dataframe, 'CHAN' + str(i) + 'ROI' + str(j))
             dataframe.insert(j+4, column= 'ROI' + str(j) + 'AVG', value = dat/4)
             # col1.append('ROI' + str(j) + 'AVG')
@@ -74,7 +89,7 @@ def process_interpolate_bin_from_uid(uid, db, e0=None):
             raw_df = translate_apb_dataset(apb_df, energy_df, energy_offset)
 
             apb_trig_timestamps = load_apb_trig_dataset_from_db(db, uid)
-            xs3_dict = load_xs3_dataset_from_db(db, uid, apb_trig_timestamps)
+            xs3_dict = load_xs3x_dataset_from_db(db, uid, apb_trig_timestamps)
 
             raw_df = {**raw_df, **xs3_dict}
             key_base = 'CHAN1ROI1'
@@ -99,6 +114,9 @@ def process_interpolate_bin_from_uid(uid, db, e0=None):
                     save_binned_df_as_file(path_to_file, binned_df, comments, reorder=True)
                 elif experiment == 'fly_energy_scan_xs3':
                     binned_df = average_roi_channels(binned_df)
+                    save_binned_df_as_file(path_to_file, binned_df, comments, reorder=True)
+                elif experiment == 'fly_energy_scan_xs3x':
+                    binned_df = average_roi_channels_xs3x(binned_df)
                     save_binned_df_as_file(path_to_file, binned_df, comments, reorder=True)
                 else:
                     save_binned_df_as_file(path_to_file, binned_df, comments, reorder=False)
@@ -145,6 +163,15 @@ def process_interpolate_bin(doc, db, draw_func_interp = None, draw_func_binnned 
 
                 apb_trig_timestamps = load_apb_trig_dataset_from_db(db, uid)
                 xs3_dict = load_xs3_dataset_from_db(db, uid, apb_trig_timestamps)
+                raw_df = {**raw_df, **xs3_dict}
+                key_base = 'CHAN1ROI1'
+
+            elif experiment == 'fly_energy_scan_xs3x':
+                apb_df, energy_df, energy_offset = load_apb_dataset_from_db(db, uid)
+                raw_df = translate_apb_dataset(apb_df, energy_df, energy_offset)
+
+                apb_trig_timestamps = load_apb_trig_dataset_from_db(db, uid)
+                xs3_dict = load_xs3x_dataset_from_db(db, uid, apb_trig_timestamps)
 
                 raw_df = {**raw_df, **xs3_dict}
                 key_base = 'CHAN1ROI1'
@@ -169,6 +196,9 @@ def process_interpolate_bin(doc, db, draw_func_interp = None, draw_func_binnned 
                         save_binned_df_as_file(path_to_file, binned_df, comments, reorder=True)
                     elif experiment == 'fly_energy_scan_xs3':
                         binned_df = average_roi_channels(binned_df)
+                        save_binned_df_as_file(path_to_file, binned_df, comments, reorder=True)
+                    elif experiment == 'fly_energy_scan_xs3x':
+                        binned_df = average_roi_channels_xs3x(binned_df)
                         save_binned_df_as_file(path_to_file, binned_df, comments, reorder=True)
                     else:
                         save_binned_df_as_file(path_to_file, binned_df, comments, reorder=False)

@@ -14,7 +14,7 @@ from xas.interpolate import interpolate, interpolate_new
 from xas.process import load_apb_dataset_from_db, translate_apb_dataset, load_apb_trig_dataset_from_db, \
     load_xs3_dataset_from_db, interpolate, rebin
 
-from xas.db_io import load_xs3_dataset_from_db_new
+from xas.db_io import load_xs3_dataset_from_db_new, load_xs3x_dataset_from_db
 
 from xray import encoder2energy
 
@@ -27,6 +27,7 @@ raw_df = translate_apb_dataset(apb_df, energy_df, energy_offset)
 
 apb_trig_timestamps = load_apb_trig_dataset_from_db(db, db[-1].start['uid'])
 xs3_dict = load_xs3_dataset_from_db_new(db, db[-1].start['uid'], apb_trig_timestamps)
+xs3_dict = load_xs3x_dataset_from_db(db, db[-1].start['uid'], apb_trig_timestamps)
 
 raw_df = {**raw_df, **xs3_dict}
 key_base = 'CHAN1ROI1'
